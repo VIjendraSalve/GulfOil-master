@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No notification is available for you now"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:id="@+id/txt_no_notifications"
+        android:visibility="gone"
+
+        />
+
+    <ListView
+        android:id="@+id/lstNotifications"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+
+        />
+
+    <!--       android:divider="#4D000000"
+            android:dividerHeight="2px"-->
+</LinearLayout>

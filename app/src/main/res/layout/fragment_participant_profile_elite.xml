@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize"
+    android:background="@drawable/unnati_mandala_art_background"
+    tools:context=".ParticipantProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_16dp"
+        android:paddingRight="@dimen/padding_16dp"
+        android:paddingBottom="@dimen/padding_24dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="@dimen/margin_24dp"
+            app:civ_border_color="@color/text_n_icon_white"
+            app:civ_border_width="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_default_user_avatar" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUpdateProfileImage"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="76dp"
+            android:src="@drawable/camera_bg_white"
+            app:civ_border_color="@color/text_n_icon_white"
+            app:civ_border_width="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvProfileInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginBottom="@dimen/margin_24dp"
+            android:visibility="visible"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@id/ivUpdateProfileImage">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_16dp">
+
+                <TextView
+                    android:id="@+id/tvBasicDetailsLable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Basic Details"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivBasicDetailsDropDown"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/padding_8dp"
+                    app:srcCompat="@drawable/ic_drop_down_grey" />
+
+                <LinearLayout
+                    android:id="@+id/llBasicDetailsForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBasicDetailsLable"
+                    android:layout_marginTop="@dimen/margin_16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvUINLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_uin_hint" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvUINLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilUIN"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvUINLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxBackgroundColor="@color/menu_disable_grey"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtUIN"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:enabled="false"
+                                    android:textColor="@color/black"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvRetailerCodeLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_retailer_code_hint" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvRetailerCodeLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilRetailerCode"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvRetailerCodeLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxBackgroundColor="@color/menu_disable_grey"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtRetailerCode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:enabled="false"
+                                    android:textColor="@color/black"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvFullNameLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_full_name_hint" />
+
+                    </RelativeLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilFullName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="25dp"
+                        app:boxCornerRadiusBottomStart="25dp"
+                        app:boxCornerRadiusTopEnd="25dp"
+                        app:boxCornerRadiusTopStart="25dp"
+                        app:boxStrokeErrorColor="@color/error"
+                        app:errorTextColor="@color/error">
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtFullName"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_48dp"
+                            android:inputType="textPersonName"
+                            android:padding="@dimen/tiet_padding_6dp"
+                            android:textSize="@dimen/tiet_text_size_16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:layout_marginRight="2dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvShopNameLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_shop_name_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvShopNameLable"
+                            android:text="*"
+                            android:textColor="@color/Red" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilShopName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvShopNameLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxBackgroundColor="@color/menu_disable_grey"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtShopName"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:enabled="false"
+                                android:textColor="@color/black"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvEmailLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_email_id_hint" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilEmailName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvEmailLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:inputType="textEmailAddress"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/margin_10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMobileLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_mobile_no_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvMobileLable"
+                            android:text="*"
+                            android:textColor="@color/Red" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilMobile"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvMobileLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxBackgroundColor="@color/menu_disable_grey"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtMobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:enabled="false"
+                                android:textColor="@color/black"
+                                android:inputType="phone"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_pancard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginBottom="@dimen/margin_48dp"
+            android:visibility="visible"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cvProfileInfo"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_16dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_pan_Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvPanDetailsLable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Pan Card Details"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ivPanDetailsDropDown"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/padding_8dp"
+                        app:srcCompat="@drawable/ic_drop_down_grey" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_pan_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/tvPanRevalidate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Pan Revalidate "
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPanRevalidateReason"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toRightOf="@id/tvPanRevalidate"
+                            android:text="Reason"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/text_size_14sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_pan_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPanCardNameLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_pan_card_name" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvPanCardNameLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilPanCardName"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvPanCardNameLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtPanCardName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPanCardNoLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_pan_card_no_hint" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvPanCardNoLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilPanCardNo"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvPanCardNoLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtPanCardNoCode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8dp"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="2dp"
+                                android:layout_weight="0.60"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvPanImageLable"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="@dimen/padding_16dp"
+                                    android:text="@string/edt_pan_card_img_hint" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/tvPanImageLable"
+                                    android:text="*"
+                                    android:textColor="@color/Red" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilPanImage"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvPanImageLable"
+                                    app:boxCornerRadiusBottomEnd="25dp"
+                                    app:boxCornerRadiusBottomStart="25dp"
+                                    app:boxCornerRadiusTopEnd="25dp"
+                                    app:boxCornerRadiusTopStart="25dp"
+                                    app:boxStrokeErrorColor="@color/error"
+                                    app:errorTextColor="@color/error">
+                                    <!--this is the actual edit text which takes the input-->
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edtPanImage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/height_48dp"
+                                        android:maxLines="1"
+                                        android:padding="@dimen/tiet_padding_6dp"
+                                        android:singleLine="true"
+                                        android:textSize="@dimen/tiet_text_size_16sp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </RelativeLayout>
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnChoosePanCard"
+                                style="@style/elite_dialog_purple_button"
+                                android:layout_width="0dp"
+                                android:layout_gravity="bottom"
+                                android:layout_weight="0.40"
+                                android:text="Choose File" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvViewPanCardCopy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_16dp"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="View Pan Card Copy"
+                            android:textColor="@color/hyperlink" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvBankDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginBottom="@dimen/margin_24dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cv_pancard">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_16dp">
+
+
+
+                <TextView
+                    android:id="@+id/tvBankDetailsLable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text=" Bank Account Details"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+
+
+                <ImageView
+                    android:id="@+id/ivBankDetailsDropDown"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/padding_8dp"
+                    app:srcCompat="@drawable/ic_drop_down_grey" />
+
+                <LinearLayout
+                    android:id="@+id/llBankDetailsForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBankDetailsLable"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/tvBankDetailsLable"
+                        android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/tvBankRevalidate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Bank Revalidate "
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvBankRevalidateReason"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toRightOf="@id/tvPanRevalidate"
+                            android:text="Reason"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/text_size_14sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        style="@style/text_black"
+                        android:layout_margin="5dp"
+                        android:gravity="right"
+                        tools:text="Status: Submitted for approval" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp">
+
+                        <TextView
+                            android:id="@+id/tvBankNameLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_bank_name_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvBankNameLable"
+                            android:text=""
+                            android:textColor="@color/Red" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlBankName"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_below="@id/tvBankNameLable"
+                            android:layout_marginTop="4dp">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/spnBankName"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_spinner_bg"
+                                android:paddingLeft="@dimen/padding_8dp" />
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/margin_16dp"
+                                android:padding="8dp"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ic_drop_down_grey" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tvErrorBankName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rlBankName"
+                            android:layout_marginTop="@dimen/margin_8dp"
+                            android:textColor="@color/error"
+                            android:visibility="gone"
+                            tools:text="Select bank name" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_other_bank_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:layout_marginRight="2dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvOtherBankNameLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_other_bank_name_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvOtherBankNameLable"
+                            android:text=""
+                            android:textColor="@color/Red" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilOtherBankName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvOtherBankNameLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtOtherBankName"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:inputType="textPersonName"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp">
+
+                        <TextView
+                            android:id="@+id/tvBankTypeLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_bank_type_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvBankTypeLable"
+                            android:text=""
+                            android:textColor="@color/Red" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlBankType"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_below="@id/tvBankTypeLable"
+                            android:layout_marginTop="4dp">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/spnBankType"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_spinner_bg"
+                                android:paddingLeft="@dimen/padding_8dp" />
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/margin_16dp"
+                                android:padding="8dp"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ic_drop_down_grey" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tvErrorBankType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rlBankType"
+                            android:layout_marginTop="@dimen/margin_8dp"
+                            android:textColor="@color/error"
+                            android:visibility="gone"
+                            tools:text="Select bank type" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:layout_marginRight="2dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvAccountHolderNameLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_account_holder_name_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvAccountHolderNameLable"
+                            android:text=""
+                            android:textColor="@color/Red" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilAccountHolderName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvAccountHolderNameLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtAccountHolderName"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:inputType="textPersonName"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:layout_marginRight="2dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvAccountNumberLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_account_number_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvAccountNumberLable"
+                            android:text=""
+                            android:textColor="@color/Red" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilAccountNumber"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvAccountNumberLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtAccountNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:inputType="numberSigned"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:layout_marginRight="2dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvIFSCCodeLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_ifsc_code_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvIFSCCodeLable"
+                            android:text=""
+                            android:textColor="@color/Red" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilIFSCCode"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvIFSCCodeLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtIFSCCode"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:inputType="textCapCharacters"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:layout_marginRight="2dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBranchNameLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="@string/edt_branch_name_hint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvBranchNameLable"
+                            android:text=""
+                            android:textColor="@color/Red" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilBranchName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvBranchNameLable"
+                            app:boxCornerRadiusBottomEnd="25dp"
+                            app:boxCornerRadiusBottomStart="25dp"
+                            app:boxCornerRadiusTopEnd="25dp"
+                            app:boxCornerRadiusTopStart="25dp"
+                            app:boxStrokeErrorColor="@color/error"
+                            app:errorTextColor="@color/error">
+                            <!--this is the actual edit text which takes the input-->
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtBranchName"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_48dp"
+                                android:inputType="textCapSentences"
+                                android:padding="@dimen/tiet_padding_6dp"
+                                android:textSize="@dimen/tiet_text_size_16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="0.60"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvCancelledChequeImageLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_cancelled_cheque_img_hint" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvCancelledChequeImageLable"
+                                android:text=""
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilCancelledChequeImage"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvCancelledChequeImageLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxBackgroundColor="@color/menu_disable_grey"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtCancelledChequeImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:maxLines="1"
+                                    android:textColor="@color/black"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnChooseCancelCheque"
+                            style="@style/elite_dialog_purple_button"
+                            android:layout_width="0dp"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="0.40"
+                            android:text="Choose File" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvViewCancelChequeCopy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_16dp"
+                        android:paddingLeft="@dimen/padding_16dp"
+                        android:text="View Cancelled Cheque Copy"
+                        android:textColor="@color/hyperlink" />
+                </LinearLayout>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/cvBankDetails">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCancel"
+                style="@style/elite_dialog_white_button"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:clickable="true"
+                android:text="Cancel" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                style="@style/elite_dialog_purple_button"
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:text="Submit" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

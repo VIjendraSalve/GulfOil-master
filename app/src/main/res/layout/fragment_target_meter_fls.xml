@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--    <Spinner
+            android:id="@+id/spinner1"
+            android:entries="@array/spinner_item"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <EditText
+            android:hint="Enter mobile number"
+            android:id="@+id/edText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.89" />
+        <Button
+            android:text="SEARCH"
+            android:background="@color/gridbutton_o"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnsearch" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="360dp">
+    </ListView>-->
+
+    <!-- <Button
+         android:background="@color/gridbutton_o"
+         android:text="View Target"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/btnviewtarget" />-->
+
+</LinearLayout>

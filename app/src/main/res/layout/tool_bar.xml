@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/header_bg"
+    android:elevation="4dp"
+    app:theme="@style/AppTheme"
+    app:popupTheme="@style/PopupMenu"
+    app:titleTextColor="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgvw_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:paddingLeft="5dp"
+            android:layout_marginRight="-15dp"
+            android:src="@drawable/blnk_bg_head_4logo" />
+        <!-- <ImageView
+             android:id="@+id/imgvw_search"
+             android:layout_width="wrap_content"
+             android:layout_height="50dp"
+             android:layout_alignParentRight="true"
+             android:src="@drawable/search"
+             android:layout_marginRight="10dp"/>-->
+
+        <TextView
+            android:id="@+id/txtUnreadCount"
+            android:layout_alignRight="@+id/imgvw_logo"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/header_bg"
+            android:text="0"
+            android:layout_centerVertical="true"
+            android:textSize="22dp"
+            android:layout_marginRight="5dp"
+            android:padding="0dp"
+            android:visibility="gone"
+            android:background="@drawable/not_back" />
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

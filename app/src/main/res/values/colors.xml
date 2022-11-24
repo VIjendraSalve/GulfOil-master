@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#10357c</color>
+    <color name="colorPrimaryDark">#011c59</color>
+    <color name="colorAccent">#012069</color>
+    <color name="white">#FFFFFF</color>
+    <!--<color name="btn_gradient_start_color">#d80b8c</color>-->
+    <color name="btn_gradient_start_color">#a00000</color>
+
+    <item name="black" type="color">#000000</item>
+    <item name="gray" type="color">#9e9e9e</item>
+    <item name="Red" type="color">#ff0000</item>
+
+    <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+    <color name="result_minor_text">#8cc0c0c0</color>
+    <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="transparent">#4D000000</color>
+    <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+
+    <item name="selected_textcolor" type="color">#000000</item>
+    <item name="unselected_textcolor" type="color">#ffffff</item>
+    <item name="blue" type="color">#000080</item>
+    <item name="drawer_bgcolor" type="color">#10357c</item>
+    <item name="header_bg" type="color">#10357c</item>
+    <item name="tab_color" type="color">#ee4617</item>
+    <item name="toolbar_bg" type="color">#1c1c1c</item>
+
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+
+    <color name="gridbutton_b">#a71919</color>
+    <color name="gridbutton_o">#f55505</color>
+    <color name="gridbutton_r">#ff180b</color>
+    <color name="common_action_bar_splitter">#FFF</color>
+
+    <color name="lightback">#a3f7a86b</color>
+
+    <color name="lightpic">#ff9966</color>
+    <color name="darkpic">#ff6633</color>
+
+    <!--Added by Pravin Dharam-->
+    <color name="org99">#ffc6a9</color>
+    <color name="org100">#feb894</color>
+    <color name="org101">#ff6634</color>
+    <color name="org102">#ff3300</color>
+    <color name="org103">#cd3301</color>
+
+    <color name="piaChartRed">#ee2825</color>
+    <color name="gold_color">#ba8e57</color>
+    <color name="royalty_text_gold">#ba8e57</color>
+    <color name="webview_background">#181818</color>
+
+    <color name="splash_pop_up_retail_user_dialog_header_bg">#ff6634</color>
+    <color name="splash_pop_up_royalty_user_dialog_header_bg">#bb8e57</color>
+    <color name="color2">#3F51B5</color>
+    <color name="color3">#2196F3</color>
+    <color name="color4">#4CAF50</color>
+
+    <!--region New color codes for new design Added By Pravin Dharam on 03-April-2021-->
+    <color name="text_n_icon_white">#ffffff</color>
+    <color name="text_black">#191919</color>
+    <color name="text_n_icon_light_grey">#6d6d6d</color>
+    <color name="divider_n_stroke_light_grey">#6d6d6d</color>
+    <color name="hyperlink">#000eee</color>
+    <color name="error">#f80000</color>
+    <color name="unnati_text_icon_background_stroke">#001f6a</color>
+    <color name="unnati_gradient_top_n_bottom">#012069</color>
+    <color name="unnati_gradient_middle">#002277</color>
+    <color name="milestone_journey_success">#008000</color>
+    <!--Elite specific color change color by vijendra backup is in comments-->
+    <color name="elite_gradient_top_n_bottom">#001f6a</color>
+    <color name="elite_gradient_middle">#012069</color>
+    <color name="elite_disable_button">#7D89A5</color>
+    <color name="elite_text_background_stroke">#002277</color>
+   <!-- &lt;!&ndash;Elite specific color&ndash;&gt;
+    <color name="elite_gradient_top_n_bottom">#5c006b</color>
+    <color name="elite_gradient_middle">#6e0070</color>
+    <color name="elite_disable_button">#9974a0</color>
+    <color name="elite_text_background_stroke">#350037</color>-->
+    <!--Royal specific color-->
+    <color name="royal_text_icon_background_stroke">#d7b049</color>
+    <color name="royal_gradient_top_n_bottom">#181818</color>
+    <color name="royal_gradient_middle">#1c1c1c</color>
+    <color name="royal_disable_button">#69572a</color>
+    <!--Club specific color-->
+    <!--<color name="club_text_background_stroke">#005955</color>
+    <color name="club_gradient_top_n_bottom">#057f7a</color>
+    <color name="club_gradient_middle">#299487</color>
+    <color name="club_disable_button">#97c3bd</color>
+    <color name="menu_disable_grey">#DAD7D7</color>-->
+
+    <color name="club_text_background_stroke">#001f6a</color>
+    <color name="club_gradient_top_n_bottom">#012069</color>
+    <color name="club_gradient_middle">#7D89A5</color>
+    <color name="club_disable_button">#9EA4B1</color>
+    <color name="menu_disable_grey">#DAD7D7</color>
+
+    <!--endregion End new color codes-->
+
+</resources>

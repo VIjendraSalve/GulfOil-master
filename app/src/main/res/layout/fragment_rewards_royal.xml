@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="?android:actionBarSize"
+    android:background="@drawable/royal_mandala_art_background"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/padding_16dp"
+    android:paddingRight="@dimen/padding_16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/margin_16dp">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spn_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_spinner_bg"
+                    android:paddingLeft="@dimen/padding_8dp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_16dp"
+                    android:padding="8dp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_drop_down_grey" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spn_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edittext_spinner_bg"
+                        android:entries="@array/spinner_filter_entries"
+                        android:paddingLeft="@dimen/padding_8dp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/margin_16dp"
+                        android:padding="@dimen/padding_8dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/spinner_down_arrow_gold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_spinner_bg">
+
+                    <EditText
+                        android:id="@+id/edt_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/edittext_spinner_bg"
+                        android:drawablePadding="2dp"
+                        android:hint="Search Product"
+                        android:maxLength="10"
+                        android:paddingLeft="@dimen/padding_8dp"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textColorHint="@color/text_n_icon_light_grey"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+
+                    <ImageView
+                        android:id="@+id/btn_search"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="@dimen/margin_8dp"
+                        android:padding="8dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_search_grey" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <GridView
+                android:id="@+id/grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:columnWidth="100dp"
+                android:fitsSystemWindows="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:horizontalSpacing="8dp"
+                android:numColumns="2"
+                android:scrollbars="vertical"
+                android:verticalSpacing="8dp"
+                tools:listitem="@layout/row_reward_product_item_club" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

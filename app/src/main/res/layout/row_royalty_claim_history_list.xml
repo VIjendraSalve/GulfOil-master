@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llViewTransaction"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:descendantFocusability="beforeDescendants">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:descendantFocusability="afterDescendants"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/lblUid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="3dp"
+                android:singleLine="false"
+
+                android:text="fdf"
+                android:textColor="@color/gold_color"
+                android:textSize="@dimen/edittext_textsize_sub" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/lblstatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="3dp"
+                android:singleLine="false"
+                android:text="fdf"
+                android:textColor="@color/gold_color"
+                android:textSize="@dimen/edittext_textsize_sub" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/lblPoint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="3dp"
+                android:singleLine="false"
+                android:text="fdf"
+                android:textColor="@color/gold_color"
+                android:textSize="@dimen/edittext_textsize_sub" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/lbltotalPoint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="3dp"
+                android:singleLine="false"
+                android:text="fdf"
+                android:textColor="@color/gold_color"
+                android:textSize="@dimen/edittext_textsize_sub" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+
+                android:background="@color/black" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+    </LinearLayout>
+</LinearLayout>

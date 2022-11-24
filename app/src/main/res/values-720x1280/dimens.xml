@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_txtsize">10sp</dimen>
+    <dimen name="btn_txtsize_small">9sp</dimen>
+    <dimen name="login_margin_bottom">18dp</dimen>
+    <dimen name="btn_height">40dp</dimen>
+    <dimen name="edittext_height">50dp</dimen>
+    <dimen name="footer_bottom_padding">30dp</dimen>
+    <dimen name="login_edittext_width">300dp</dimen>
+    <dimen name="edittext_drawable_padding">60dp</dimen>
+    <dimen name="profile_image_height_width">120dp</dimen>
+    <dimen name="genuine_padding_bottom">40dp</dimen>
+    <dimen name="edittext_textsize_sub">16sp</dimen>
+    <dimen name="text_size">21dp</dimen>
+    <dimen name="dialog_text_size">22dp</dimen>
+    <dimen name="drawer1">320dp</dimen>
+    <dimen name="button_right_padding">70dp</dimen>
+    <dimen name="profile_photo_width">80dp</dimen>
+    <dimen name="profile_photo_height">80dp</dimen>
+    <dimen name="button_height">40.0dip</dimen>
+
+    <dimen name="button_width">130.0dip</dimen>
+    <dimen name="crop__bar_height">48dp</dimen>
+
+    <dimen name="appdemo_width">140.0dip</dimen>
+    <dimen name="appdemo_height">45dp</dimen>
+
+
+</resources>

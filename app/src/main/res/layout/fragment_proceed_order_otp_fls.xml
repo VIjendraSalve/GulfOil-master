@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:background="@drawable/unnati_mandala_art_background"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/padding_16dp"
+    android:paddingRight="@dimen/padding_16dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_24dp"
+        app:cardCornerRadius="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="48dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Please Enter"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_24sp" />
+
+                <TextView
+                    android:id="@+id/txt_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:gravity="center"
+                    android:text="One time password OTP has been sent to the registered mobile number"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edt_otp"
+                        style="@style/login_edittext_style"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/otp_edittext_bg"
+                        android:hint="@string/otp_enter"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingLeft="@dimen/edittext_drawable_padding"
+                        android:textColor="@color/gold_color"
+                        android:textColorHint="@color/gold_color"
+                        android:textSize="@dimen/edittext_textsize"
+                        android:visibility="gone" />
+
+                    <com.chaos.view.PinView
+                        android:id="@+id/pinViewOTP"
+                        style="@style/PinWidget.PinView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="true"
+                        android:inputType="number"
+                        android:itemBackground="@color/text_n_icon_white"
+                        android:padding="@dimen/padding_8dp"
+                        android:textColor="@color/text_black"
+                        android:textSize="18sp"
+                        app:cursorColor="@color/text_black"
+                        app:cursorWidth="2dp"
+                        app:itemCount="6"
+                        app:itemHeight="36dp"
+                        app:itemRadius="4dp"
+                        app:itemSpacing="4dp"
+                        app:itemWidth="36dp"
+                        app:lineColor="@color/text_n_icon_light_grey"
+                        app:lineWidth="2dp"
+                        app:viewType="rectangle" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_submit"
+                        style="@style/unnati_dialog_blue_button"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/btn_signup_text" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_v2_resend_otp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_16dp"
+                            android:text="Didn&apos;t you receive any code?"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_resend_otp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/str_resend_new_code"
+                            android:textAllCaps="true"
+                            android:textColor="@color/hyperlink"
+                            android:textSize="@dimen/text_size_12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

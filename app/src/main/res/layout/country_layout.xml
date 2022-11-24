@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:id="@+id/lin_not"
+        android:background="@android:drawable/dialog_holo_light_frame">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@color/gray"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="abc"
+                android:textSize="19dp"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:id="@+id/txt_notifications"
+                android:layout_marginRight="15dp"
+
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/unread_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="10"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:textColor="#00FF00"
+                android:textSize="2sp"
+                android:background="@drawable/unread_circle"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:id="@+id/txt_dateTime" />
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/txt_body"
+                android:singleLine="true"
+                android:maxLength="35" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="...."
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+
+                android:layout_toRightOf="@+id/txt_body" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnMore"
+        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:background="@color/header_bg"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:text="Read More"
+        android:clickable="false"
+        android:focusable="false"
+        android:textAllCaps="false"
+        android:focusableInTouchMode="false"
+
+        />
+</LinearLayout>

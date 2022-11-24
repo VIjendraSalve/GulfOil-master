@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="beforeDescendants"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_card_background"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:weightSum="2">
+        <!--  <LinearLayout
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+                      android:weightSum="2"
+              android:padding="2dp"
+              >
+          <TextView
+              android:id="@+id/lblid"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="5sp"
+              android:layout_marginLeft="10dp"
+              android:textColor="@color/black"
+               android:layout_weight="1"/>
+
+          <TextView
+              android:id="@+id/lblmobno"
+
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="5sp"
+              android:layout_marginLeft="10dp"
+              android:textColor="@color/black"
+              android:layout_weight="1"/>
+
+          </LinearLayout>
+          <TextView
+              android:id="@+id/lblworkshopname"
+
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="5sp"
+              android:layout_marginLeft="10dp"
+              android:textColor="@color/black"
+              android:textSize="15dp"
+              android:textStyle="bold"
+              android:padding="3dp"
+              />-->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/lblName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+
+                android:singleLine="true"
+                android:text="fdf"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittext_textsize_sub" />
+
+            <TextView
+                android:id="@+id/lblworkshopnameparticipant"
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+
+                android:singleLine="true"
+                android:text="fdf"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittext_textsize_sub" />
+
+            <TextView
+                android:id="@+id/lblmobnoparticipant"
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+
+                android:singleLine="true"
+                android:text="fdf"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittext_textsize_sub" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnAccuCodeParticipant"
+
+                    android:layout_gravity="center"
+                    style="@style/button_pink"
+                    android:layout_weight="1"
+                    android:text="Accumulate Code" />
+
+                <Button
+                    android:id="@+id/btnClaimHistoryParticipant"
+                    android:layout_gravity="center"
+                    style="@style/button_pink"
+                    android:layout_weight="1"
+                    android:text="Claim History" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

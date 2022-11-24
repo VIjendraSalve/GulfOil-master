@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "856106748256",
+    "firebase_url": "https://gulfoil-7211d.firebaseio.com",
+    "project_id": "gulfoil-7211d",
+    "storage_bucket": "gulfoil-7211d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856106748256:android:3bb39cad66d48d43d8b605",
+        "android_client_info": {
+          "package_name": "com.taraba.gulfoilapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856106748256-n7ku3s281fks7c4gitaa701kbc25r7jb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taraba.gulfoilapp",
+            "certificate_hash": "43a336356a6325f59d82fa447c7f31331c803542"
+          }
+        },
+        {
+          "client_id": "856106748256-v17nj4qh7id6r34v9845v5odsq6b7slo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkRAl3QBadXfbNF6jGOdWFWiOnz2fX5Ak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856106748256-v17nj4qh7id6r34v9845v5odsq6b7slo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "856106748256-5246n9qksdsnl4206ti74v1q9sqps29o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.taraba.gulfoil"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

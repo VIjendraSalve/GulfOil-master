@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.taraba.gulfoilapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home_royal">
+        <action
+            android:id="@+id/action_navigation_home_to_orderConfirmationDetailsFragment"
+            app:destination="@id/orderConfirmationDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.taraba.gulfoilapp.ui.more.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more_royal">
+        <action
+            android:id="@+id/action_navigation_more_to_rewardsFragment"
+            app:destination="@id/rewardsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.taraba.gulfoilapp.ui.account.AccountFragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_account_royal" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.taraba.gulfoilapp.HelpFragment"
+        android:label="HelpFragment" />
+    <fragment
+        android:id="@+id/rewardsFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.view_rewards.RewardsFragment"
+        android:label="RewardsFragment">
+        <argument
+            android:name="isDisable"
+            android:defaultValue="false"
+            app:argType="string" />
+        <argument
+            android:name="path"
+            android:defaultValue="d"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_rewardsFragment_to_orderHistoryFragment"
+            app:destination="@id/orderHistoryFragment" />
+        <action
+            android:id="@+id/action_rewardsFragment_to_orderConfirmationDetailsFragment"
+            app:destination="@id/orderConfirmationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.order_history.NewOrderHistoryFragment"
+        android:label="OrderHistoryFragment">
+        <argument
+            android:name="mech_trno"
+            app:argType="string" />
+        <argument
+            android:name="from_mech_search"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_orderHistoryFragment_to_orderHistoryDetailsFragment"
+            app:destination="@id/orderHistoryDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.order_details.NewOrderDetailsFragment"
+        android:label="OrderDetailsFragment">
+
+        <argument
+            android:name="Order_Details"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="order_request_no"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderConfirmationDetailsFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.order_confirm_screen.OrderConfirmDetailsFragment"
+        android:label="OrderConfirmationDetailsFragment">
+
+
+        <argument
+            android:name="isDisable"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="product_code"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="currentRedeemPoints"
+            android:defaultValue=" "
+            app:argType="string" />
+        <action
+            android:id="@+id/action_orderConfirmationDetailsFragment_to_proceedOrderOTPFragment"
+            app:destination="@id/proceedOrderOTPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/proceedOrderOTPFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.proceed_order.ProceedOrderOTPFragment"
+        android:label="ProceedOrderOTPFragment">
+
+        <argument
+            android:name="product_code"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="multi_qty"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="fromOrderHistoryScreen"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="order_id"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderHistoryDetailsFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.order_history_details.OrderHistoryDetailsFragment"
+        android:label="OrderHistoryDetailsFragment">
+
+
+        <argument
+            android:name="orderHistory"
+            app:argType="com.taraba.gulfoilapp.model.OrderHistory" />
+        <action
+            android:id="@+id/action_orderHistoryDetailsFragment_to_proceedOrderOTPFragment"
+            app:destination="@id/proceedOrderOTPFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mileStoneFragment"
+        android:name="com.taraba.gulfoilapp.MileStoneFragment"
+        android:label="MileStoneFragment">
+        <argument
+            android:name="targetValue"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="isPopUpDisplay"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="achievement"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/pointCalculatorWebViewFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.point_calculator.PointCalculatorWebViewFragment"
+        android:label="PointCalculatorWebViewFragment"></fragment>
+    <fragment
+        android:id="@+id/newChangePasswordFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.change_password.NewChangePasswordFragment"
+        android:label="NewChangePasswordFragment"></fragment>
+
+    <fragment
+        android:id="@+id/myPointsFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.view_transaction.MyPointsFragment"
+        android:label="MyPointsFragment"></fragment>
+
+    <fragment
+        android:id="@+id/magicBonanzaListFragment"
+        android:name="com.taraba.gulfoilapp.MagicBonanzaListFragment"
+        android:label="MagicBonanzaListFragment"></fragment>
+    <fragment
+        android:id="@+id/magicBonanzaDetailsFragment"
+        android:name="com.taraba.gulfoilapp.MagicBonanzaDetailsFragment"
+        android:label="MagicBonanzaDetailsFragment"></fragment>
+
+    <fragment
+        android:id="@+id/participantProfileFragment"
+        android:name="com.taraba.gulfoilapp.ParticipantProfileFragment"
+        android:label="ParticipantProfileFragment"></fragment>
+
+    <fragment
+        android:id="@+id/updateProfileOTPFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.proceed_order.UpdateProfileOTPFragment"
+        android:label="UpdateProfileOTPFragment"></fragment>
+
+    <fragment
+        android:id="@+id/newNotificationFragment"
+        android:name="com.taraba.gulfoilapp.ui.notification.NewNotificationFragment"
+        android:label="NewNotificationFragment"></fragment>
+    <fragment
+        android:id="@+id/leaderBoardFragment"
+        android:name="com.taraba.gulfoilapp.LeaderBoardFragment"
+        android:label="LeaderBoardFragment"></fragment>
+    <fragment
+        android:id="@+id/newNotificationDetailsFragment"
+        android:name="com.taraba.gulfoilapp.ui.notification.NewNotificationDetailsFragment"
+        android:label="NotificationDeatailFragment">
+        <argument
+            android:name="ARG_PARAM_NOTIFICATION_OBJ"
+            app:argType="com.taraba.gulfoilapp.model.NewNotification" />
+    </fragment>
+
+</navigation>

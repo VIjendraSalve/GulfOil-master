@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fls_navigation_graph"
+    app:startDestination="@+id/flsHomeFragment">
+    <fragment
+        android:id="@+id/flsHomeFragment"
+        android:name="com.taraba.gulfoilapp.ui.fls.home.FlsHomeFragment"
+        android:label="FlsHomeFragment">
+        <action
+            android:id="@+id/action_flsHomeFragment_to_rewardsFragmentFLS"
+            app:destination="@+id/rewardsFragmentFLS" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNotificationFragmentFLS"
+        android:name="com.taraba.gulfoilapp.ui.notification.NewNotificationFragment"
+        android:label="NewNotificationFragment" />
+    <fragment
+        android:id="@+id/flsAccountFragment"
+        android:name="com.taraba.gulfoilapp.ui.fls.account.FlsAccountFragment"
+        android:label="FlsAccountFragment" />
+
+    <fragment
+        android:id="@+id/updatePanVerifyOTPFragment"
+        android:name="com.taraba.gulfoilapp.ui.fls.search_retailer.UpdatePanVerifyOTPFragment"
+        android:label="UpdatePanVerifyOTPFragment" >
+
+        <argument
+            android:name="flsid"
+            android:defaultValue="123"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/newChangePasswordFragmentFLS"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.change_password.NewChangePasswordFragment"
+        android:label="NewChangePasswordFragment" />
+    <fragment
+        android:id="@+id/newSearchRetailerSelectionFragment"
+        android:name="com.taraba.gulfoilapp.ui.fls.search_retailer.NewSearchRetailerSelectionFragment"
+        android:label="NewSearchRetailerSelectionFragment">
+        <argument
+            android:name="ComesFrom"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newSearchRetailerFragment"
+        android:name="com.taraba.gulfoilapp.ui.fls.search_retailer.NewSearchRetailerFragment"
+        android:label="NewSearchRetailerFragment">
+        <argument
+            android:name="SearchBy"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="participant_id"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="Pan"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="pan_name"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="Pan_status"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="View_pan"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="Pan_reason"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="Is_readonly"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <!--<argument
+            android:name="SearchRetailerResponse"
+            app:argType="com.taraba.gulfoilapp.model.SearchRetailerResponse" />-->
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/myPointsFragmentFls"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.view_transaction.MyPointsFragment"
+        android:label="MyPointsFragment">
+        <argument
+            android:name="isFromFLS"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="retailerLoginId"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editSearchRetailerFragment"
+        android:name="com.taraba.gulfoilapp.ui.fls.search_retailer.EditSearchRetailerFragment"
+        android:label="EditSearchRetailerFragment">
+        <argument
+            android:name="SearchRetailerResponse"
+            app:argType="com.taraba.gulfoilapp.model.SearchRetailerResponse" />
+        <argument
+            android:name="SearchBy"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateRetailerProfileOTPFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.proceed_order.UpdateRetailerProfileOTPFragment"
+        android:label="UpdateRetailerProfileOTPFragment">
+        <argument
+            android:name="retailerLoginId"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/magicBonanzaListFragment"
+        android:name="com.taraba.gulfoilapp.MagicBonanzaListFragment"
+        android:label="MagicBonanzaListFragment">
+        <argument
+            android:name="isFromFLS"
+            app:argType="boolean" />
+        <argument
+            android:name="retailerLoginId"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/magicBonanzaDetailsFragment"
+        android:name="com.taraba.gulfoilapp.MagicBonanzaDetailsFragment"
+        android:label="MagicBonanzaDetailsFragment">
+        <argument
+            android:name="isFromFLS"
+            app:argType="boolean" />
+        <argument
+            android:name="retailerLoginId"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/magicBonanzaSearchRetailerFragment"
+        android:name="com.taraba.gulfoilapp.ui.fls.search_retailer.MagicBonanzaSearchRetailerFragment"
+        android:label="MagicBonanzaSearchRetailerFragment" />
+
+    <fragment
+        android:id="@+id/fragment_pan_card_details"
+        android:name="com.taraba.gulfoilapp.ui.fls.search_retailer.PanCardDetailsFragment"
+        android:label="PanCardDetailsFragment" >
+
+        <argument
+            android:name="flsid"
+            android:defaultValue=" "
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rewardsFragmentFLS"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.view_rewards.RewardsFragment"
+        android:label="RewardsFragment">
+        <argument
+            android:name="isDisable"
+            android:defaultValue="false"
+            app:argType="string" />
+        <argument
+            android:name="path"
+            android:defaultValue="d"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderConfirmationDetailsFragment"
+        android:name="com.taraba.gulfoilapp.royalty_user_view.order_confirm_screen.OrderConfirmDetailsFragment"
+        android:label="OrderConfirmDetailsFragment">
+        <argument
+            android:name="isDisable"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="product_code"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="currentRedeemPoints"
+            android:defaultValue=" "
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNotificationDetailsFragment"
+        android:name="com.taraba.gulfoilapp.ui.notification.NewNotificationDetailsFragment"
+        android:label="NotificationDeatailFragment" />
+</navigation>

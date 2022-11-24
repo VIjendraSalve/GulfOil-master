@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="beforeDescendants"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:paddingTop="5dp"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:padding="1dp"
+            android:textColor="@color/blue"
+            android:layout_marginLeft="0dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="@color/org100"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="UIN :"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:text="Mobile number :"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_weight="0.4"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:gravity="center_vertical" />
+
+                    <TextView
+                        android:text="Status :"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:gravity="center_vertical" />
+
+                    <TextView
+                        android:text="Shop Name :"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:gravity="center_vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/org99">
+
+                    <TextView
+                        android:id="@+id/lblid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:layout_weight="1"
+                        android:text="Id"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/lblmobno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="mobile number"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+
+                    <TextView
+                        android:id="@+id/lblstatus"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Status"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+
+                    <TextView
+                        android:id="@+id/lblworkshopname"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Shop Name"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:singleLine="true"
+                    android:text="State"
+                    android:visibility="gone"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/edittext_textsize_sub" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:singleLine="true"
+                    android:text="District"
+                    android:visibility="gone"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/edittext_textsize_sub" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/lin_search"
+                android:background="@color/crop__selector_focused"></View>
+
+            <LinearLayout
+                android:id="@+id/lin_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lin_mech_code_clam"
+                android:background="@color/lightpic"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/org99"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_total_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:padding="2dp"
+                        android:layout_weight="1"
+                        android:text="Sales Points \n50"
+                        android:textColor="@color/colorPrimary"
+
+                        android:textSize="@dimen/textsize_imagegrid" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/vw_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="70dp"
+                    android:layout_toRightOf="@id/txt_total_points"
+                    android:background="@color/crop__selector_focused"></View>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/org100"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/edt_redeem_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:padding="2dp"
+                        android:layout_weight="1"
+                        android:text="Bonus Points \n50"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_imagegrid"
+                        android:layout_toRightOf="@id/vw_divider" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/vw_divider1"
+                    android:layout_width="1dp"
+                    android:layout_height="70dp"
+                    android:layout_toRightOf="@id/edt_redeem_points"
+                    android:background="@color/crop__selector_focused"></View>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/org99"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/edt_balance_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Main balance \n50"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_imagegrid"
+
+                        android:layout_toRightOf="@id/vw_divider1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/lin_search"
+                android:background="@color/crop__selector_focused" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list"
+                android:text="Profile"
+                android:singleLine="false"
+                android:maxLines="2"
+                android:layout_weight="1"
+                android:background="@color/gridbutton_b" />
+
+            <!--  <androidx.appcompat.widget.AppCompatButton
+                  android:id="@+id/btnAccuCode"
+                  style="@style/mechanic_list"
+                  android:text="Accumulate Code" />-->
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list_small"
+                android:text="Transaction History"
+                android:singleLine="false"
+                android:maxLines="2"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@color/gridbutton_r" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/gridbutton_o"
+                android:maxLines="2"
+                android:padding="1dp"
+                android:singleLine="false"
+                android:text="Order Status" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list"
+                android:text="View Target"
+                android:singleLine="false"
+                android:maxLines="2"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@color/lightpic" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list"
+                android:text="Submit"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list"
+                android:background="@color/gridbutton_o"
+                android:text="Redeem"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list"
+                android:background="@color/gridbutton_o"
+                android:text="Submit OTP" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/mechanic_list"
+                android:background="@color/gridbutton_r"
+                android:text="Resend OTP" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearchMemberButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

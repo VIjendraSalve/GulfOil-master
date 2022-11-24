@@ -1,0 +1,696 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qy"
+    tools:context="${relativePackage}.${activityClass}"
+    android:paddingBottom="@dimen/footer_bottom_padding">
+
+    <LinearLayout
+        android:id="@+id/lin_mech_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_mechanic_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/edittext_textsize"
+            android:textColor="@color/black"
+            android:text="@string/app_name"
+            android:padding="@dimen/padding" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/lin_mech_code"
+        android:id="@+id/lin_sc_Logincontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtmechanicregistration"
+            style="@style/login_heading_style"
+            android:text="@string/mechanic_registration"
+            android:layout_below="@+id/lin_mech_code"
+            android:textColor="#10357c"
+            android:layout_marginBottom="30dp" />
+
+        <EditText
+            android:id="@+id/edt_mobile_number_first"
+            style="@style/login_edittext_style"
+            android:inputType="number"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:hint="@string/edt_username_hint"
+            android:paddingLeft="@dimen/edittext_drawable_padding"
+            android:background="@drawable/login_box"
+            android:maxLength="10"
+            android:textColor="@color/black"
+            android:layout_marginBottom="30dp"
+
+            />
+
+
+        <Button
+            android:id="@+id/btn_submit_mob_registration"
+            style="@style/contact_button"
+            android:layout_width="130.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center"
+            android:text="@string/btn_signup_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            android:layout_weight="50"
+            android:layout_marginLeft="25dp"
+            android:textStyle="bold"
+            style="@style/textview_style_registration"
+            android:text="@string/m_retailerId" />
+
+        <TextView
+            android:layout_weight="50"
+            android:id="@+id/retailerId1"
+            style="@style/textview_style_registration" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/sc_loginform_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txthead"
+                    style="@style/login_textview_style"
+                    android:text="You can edit your profile details below"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone" />
+
+
+                <com.taraba.gulfoilapp.util.CustomImageView
+                    android:id="@+id/IvRegProfile1"
+                    android:layout_width="@dimen/profile_photo_width"
+                    android:layout_height="@dimen/profile_photo_width"
+                    android:layout_gravity="center"
+                    android:src="@drawable/my_profile_"
+                    android:adjustViewBounds="true"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_update_photo"
+                    style="@style/contact_button"
+                    android:layout_width="140.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Update Photo"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:id="@+id/lin_loginform_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblFirstName"
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_first_name" />
+
+                    <EditText
+                        android:id="@+id/edt_m_firstname"
+                        style="@style/edittext_style_registration"
+                        android:layout_weight="1"
+
+                        android:inputType="textCapCharacters" />
+
+
+                    <TextView
+                        android:id="@+id/lblShopName"
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_shop_name" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopname"
+                        style="@style/edittext_style_registration"
+                        android:layout_weight="1"
+
+                        android:inputType="textCapCharacters" />
+
+                    <TextView
+                        android:id="@+id/lblShopAddressLine"
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_shop_address_line1_name" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopaddressline"
+                        style="@style/edittext_style_registration"
+                        android:maxLength="100"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters" />
+
+                    <TextView
+                        android:id="@+id/lblShopStreetAddress"
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_shop_street_address" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopstreetaddress"
+                        style="@style/edittext_style_registration"
+                        android:maxLength="100"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters" />
+
+                    <TextView
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_shop_landmark" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopLandmark"
+                        style="@style/edittext_style_registration"
+                        android:maxLength="50"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters" />
+
+                    <TextView
+                        android:id="@+id/lblShopPincode"
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_shop_pincode" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopPincode"
+                        style="@style/edittext_style_registration"
+                        android:maxLength="6"
+                        android:layout_weight="1"
+                        android:inputType="number" />
+
+                    <TextView
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_shop_subdistrict" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopSubdistrict"
+                        style="@style/edittext_style_registration"
+                        android:maxLength="50"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters" />
+
+                    <TextView
+                        android:id="@+id/lblShopTownName"
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_shop_city_name" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopTownName"
+                        style="@style/edittext_style_registration"
+                        android:maxLength="50"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters" />
+
+                    <TextView
+                        android:id="@+id/lblDistrict"
+                        style="@style/textview_style_registration"
+                        android:text="@string/m_district" />
+
+                    <EditText
+                        android:id="@+id/edt_m_shopdistrict"
+                        style="@style/edittext_style_registration"
+                        android:maxLength="50"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lblShopState"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_shop_state" />
+
+                <EditText
+                    android:id="@+id/edt_m_shopState"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="50"
+                    android:layout_weight="1"
+                    android:inputType="textCapCharacters" />
+
+                <TextView
+                    android:id="@+id/lblMobileNumber"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_mobile_no" />
+
+                <EditText
+                    android:id="@+id/edt_m_mobilenumber"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="10"
+                    android:layout_weight="1"
+                    android:inputType="number"
+
+                    />
+
+                <TextView
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_alternate_mobile_number" />
+
+                <EditText
+                    android:id="@+id/edt_m_alternatemobilenumber"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="10"
+                    android:layout_weight="1"
+                    android:inputType="number" />
+
+                <TextView
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_shop_landline_number" />
+
+                <EditText
+                    android:id="@+id/edt_m_shopLandlinenumber"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="12"
+                    android:layout_weight="1"
+                    android:inputType="number" />
+
+                <TextView
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_email" />
+
+                <EditText
+                    android:id="@+id/edt_m_email"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="50"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lblResidentialAddressline1"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_residential_address_line1" />
+
+                <EditText
+                    android:id="@+id/edt_m_residentialAddressline1"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="100"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lblResidentialAddressline2"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_residential_address_line2" />
+
+                <EditText
+                    android:id="@+id/edt_m_residentialAddressline2"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="100"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_residential_landmark" />
+
+                <EditText
+                    android:id="@+id/edt_m_residentialLandmark"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="50"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lblResidentialPincode"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_residential_pincode" />
+
+                <EditText
+                    android:id="@+id/edt_m_residentialPincode"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="6"
+                    android:inputType="number"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lblResidentialCityName"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_residential_town" />
+
+                <EditText
+                    android:id="@+id/edt_m_residentialCityName"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="50"
+                    android:inputType="textCapCharacters"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lblResidentialAddressState"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_residential_state" />
+
+                <EditText
+                    android:id="@+id/edt_m_residentialAddressState"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="50"
+                    android:inputType="textCapCharacters"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lblDateOfBirth"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_dateofBirth"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edt_dateofbirth"
+                    android:layout_height="50dp"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/calendar_box1"
+                    android:textColor="@color/black"
+                    android:inputType="date" />
+
+                <TextView
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_marriage_anniversary_date"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edt_dateofanniversary"
+                    android:layout_height="50dp"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/calendar_box1"
+                    android:textColor="@color/black"
+                    android:inputType="date" />
+
+                <TextView
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_spouse_name" />
+
+                <EditText
+                    android:id="@+id/edt_m_spouseName"
+                    style="@style/edittext_style_registration"
+                    android:maxLength="50"
+                    android:inputType="textCapCharacters"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/txtgendet"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_retailer_gender"
+
+                    />
+
+                <RadioGroup
+                    android:id="@+id/myRadioGroupGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtgendet"
+                    android:layout_marginTop="5dp"
+
+                    android:checkedButton="@+id/rBtn_male"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rBtn_male"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="@string/m_male" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn_female"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="@string/m_female" />
+
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <TextView
+                style="@style/textview_style_registration"
+                android:text="@string/m_no_of_children" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spn_children"
+                style="@style/edittext_style_registration"
+                android:entries="@array/array_name"
+                android:background="@drawable/box3" />
+
+            <CheckBox
+                android:id="@+id/rBtn_luckydrawconsent"
+                android:button="@drawable/custom_radiobutton"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:textSize="@dimen/text_size_small"
+                android:text="@string/m_lucky_draw_contest" />
+
+
+            <TextView
+                android:id="@+id/lblLuckyDrawQuestion1"
+                style="@style/textview_style_registration"
+                android:text="@string/m_lucky_draw_question1" />
+
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/edt_m_luckydrawquestion1"
+                style="@style/edittext_style_registration"
+                android:maxLength="100"
+                android:inputType="textCapCharacters"
+                android:layout_weight="1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/txtluckydrawanswer1"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_lucky_draw_answer1" />
+
+                <RadioGroup
+                    android:id="@+id/myRadioGroupLuckydrawanswer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtluckydrawanswer1"
+                    android:checkedButton="@+id/rBtn_answer1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer1"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Multi G+" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer2"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+
+
+                        android:text="Multi G Max" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer3"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+
+
+                        android:text="Gulf MAX Supreme" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer4"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+
+
+                        android:text="Gulf Formula GX" />
+
+
+                </RadioGroup>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/lblLuckyDrawQuestion2"
+                style="@style/textview_style_registration"
+                android:text="@string/m_lucky_draw_question2" />
+
+            <EditText
+                android:id="@+id/edt_m_luckydrawQuestion2"
+                style="@style/edittext_style_registration"
+                android:visibility="gone"
+                android:maxLength="100"
+                android:inputType="textCapCharacters"
+                android:layout_weight="1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/txtluckydrawanswer2"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_lucky_draw_answer1" />
+
+
+                <RadioGroup
+                    android:id="@+id/myRadioGroupLuckydrawanswer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtluckydrawanswer2"
+                    android:checkedButton="@+id/rBtn_answer"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text=" Gulf Supreme Duty LE" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer11"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+
+
+                        android:text="Gulf Cargo Power" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer12"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+
+
+                        android:text="Gulf Superfleet Turbo" />
+
+                    <RadioButton
+                        android:id="@+id/rBtn_answer13"
+                        android:button="@drawable/custom_radiobutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+
+
+                        android:text="Gulf Superfleet LE Dura Max" />
+
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/rBtn_communication"
+                    android:button="@drawable/custom_radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:textSize="@dimen/text_size_small"
+                    android:text="@string/m_communication_consent" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblDistributorId"
+                style="@style/textview_style_registration"
+
+                android:text="@string/m_distributor_id" />
+            <!--distributor id and name-->
+            <EditText
+                android:id="@+id/edt_m_distributorId"
+                style="@style/edittext_style_registration"
+                android:maxLength="50"
+                android:editable="false"
+                android:focusable="false"
+                android:clickable="false"
+                android:inputType="textCapCharacters"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/lblDistributorName"
+                style="@style/textview_style_registration"
+                android:text="@string/m_distributor_name" />
+
+            <EditText
+                android:id="@+id/edt_m_distributorName"
+                style="@style/edittext_style_registration"
+                android:maxLength="50"
+                android:editable="false"
+                android:focusable="false"
+                android:clickable="false"
+
+                android:inputType="textCapCharacters"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_update"
+                style="@style/contact_button"
+                android:layout_width="140.0dip"
+                android:layout_height="50.0dip"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Edit Registration" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

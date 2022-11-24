@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/royalty_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="40dp">
+        <TextView android:textSize="16dp" android:textStyle="bold" android:textColor="@color/gold_color" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="3dp" android:layout_marginTop="20dp" android:layout_marginBottom="10dp" android:text="Upload Your tally invoices\10and get rewarded" android:textAllCaps="true"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp">
+                    <TableRow android:background="@drawable/golden_border" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="25dp" android:layout_marginTop="30dp" android:layout_marginRight="25dp">
+                        <EditText android:textSize="15dp" android:textColor="@color/gold_color" android:textColorHint="@color/gold_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/edt_invoice_1" android:background="@null" android:paddingLeft="5dp" android:paddingTop="10dp" android:paddingRight="5dp" android:paddingBottom="10dp" android:focusableInTouchMode="false" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Select your 1st tally invoice" android:editable="false" android:layout_weight="1"/>
+                        <Button android:textSize="12dp" android:textColor="@color/black" android:id="@+id/btn_invoice_1" android:background="@drawable/order_history_btn_bg" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:minHeight="0dp" android:text="CHOOSE FILE" android:layout_weight="2.5"/>
+                    </TableRow>
+                    <TableRow android:background="@drawable/golden_border" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="25dp" android:layout_marginTop="@dimen/margin_top_button" android:layout_marginRight="25dp">
+                        <EditText android:textSize="15dp" android:textColor="@color/gold_color" android:textColorHint="@color/gold_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/edt_invoice_2" android:background="@null" android:paddingLeft="5dp" android:paddingTop="10dp" android:paddingRight="5dp" android:paddingBottom="10dp" android:focusableInTouchMode="false" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Select your 2nd tally invoice" android:editable="false" android:layout_weight="1"/>
+                        <Button android:textSize="12dp" android:textColor="@color/black" android:id="@+id/btn_invoice_2" android:background="@drawable/order_history_btn_bg" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="CHOOSE FILE" android:layout_weight="2.5"/>
+                    </TableRow>
+                    <TableRow android:background="@drawable/golden_border" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="25dp" android:layout_marginTop="@dimen/margin_top_button" android:layout_marginRight="25dp">
+                        <EditText android:textSize="15dp" android:textColor="@color/gold_color" android:textColorHint="@color/gold_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/edt_invoice_3" android:background="@null" android:paddingLeft="5dp" android:paddingTop="10dp" android:paddingRight="5dp" android:paddingBottom="10dp" android:focusableInTouchMode="false" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Select your 3rd tally invoice" android:editable="false" android:layout_weight="1"/>
+                        <Button android:textSize="12dp" android:textColor="@color/black" android:id="@+id/btn_invoice_3" android:background="@drawable/order_history_btn_bg" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="CHOOSE FILE" android:layout_weight="2.5"/>
+                    </TableRow>
+                    <Button android:textColor="@color/black" android:layout_gravity="center" android:id="@+id/btn_submit_tally_invoice" android:background="@drawable/gold_btn_bg" android:layout_width="wrap_content" android:layout_height="30dp" android:layout_marginTop="@dimen/margin_top_button" android:minHeight="0dp" android:text="SUBMIT"/>
+                    <TextView android:textSize="16dp" android:textStyle="bold" android:textColor="@color/gold_color" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/tc"/>
+                    <TextView android:textSize="14dp" android:textColor="@color/gold_color" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/invoice_upload_t_and_c" android:lineSpacingExtra="2dp"/>
+                    <TextView android:textSize="14dp" android:textColor="@color/gold_color" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="2. On Successful upload of 2 Tally Invoices &amp; Verifcation , you will receive your reward code on the app." android:lineSpacingExtra="2dp"/>
+                    <TextView android:textSize="14dp" android:textColor="@color/gold_color" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="3. Campaign valid till 31st December 2019." android:lineSpacingExtra="2dp"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

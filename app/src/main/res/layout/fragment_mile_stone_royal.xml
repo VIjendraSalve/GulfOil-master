@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize"
+    android:background="@drawable/royal_mandala_art_background"
+    android:paddingLeft="@dimen/padding_16dp"
+    android:paddingRight="@dimen/padding_16dp"
+    tools:context=".MileStoneFragment">
+
+    <TextView
+        android:id="@+id/tvUIN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:gravity="center"
+        android:textColor="@color/royal_text_icon_background_stroke"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="UNI:GU106" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        app:cardCornerRadius="25dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvYourGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="YOUR GOAL - 1000 ltr" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_4dp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp"
+                android:text="Track your goal and unlock benefits at each milestone."
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintTop_toBottomOf="@id/tvYourGoal" />
+
+            <TextView
+                android:id="@+id/tvAchievement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                tools:text="Total 30.40% Achived" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:background="@drawable/map"
+                app:layout_constraintTop_toBottomOf="@id/tvAchievement">
+
+                <ImageView
+                    android:id="@+id/ivButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lock_left"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivTag4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="75dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tag_right"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton4"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivButton4" />
+                <TextView
+                    android:id="@+id/tvTag4Title"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="4"
+                    android:text="Your Target 100%"
+                    android:textColor="@color/text_black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton4"
+                    app:layout_constraintLeft_toRightOf="@id/ivTag4"
+                    app:layout_constraintTop_toTopOf="@id/ivButton4"/>
+                <ImageView
+                    android:id="@+id/ivRoad4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/road_4"
+                    app:layout_constraintTop_toBottomOf="@id/ivButton4" />
+
+                <ImageView
+                    android:id="@+id/ivButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lock_right"
+                    app:layout_constraintTop_toBottomOf="@id/ivRoad4" />
+                <ImageView
+                    android:id="@+id/ivTag3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="75dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tag_left"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton3"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivButton3" />
+                <TextView
+                    android:id="@+id/tvTag3Title"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="4"
+                    android:text="Your Target 75%"
+                    android:textColor="@color/text_black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton3"
+                    app:layout_constraintRight_toLeftOf="@id/ivTag3"
+                    app:layout_constraintTop_toTopOf="@id/ivButton3"/>
+                <ImageView
+                    android:id="@+id/ivRoad3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/road_3"
+                    app:layout_constraintTop_toBottomOf="@id/ivButton3" />
+
+                <ImageView
+                    android:id="@+id/ivButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lock_left"
+                    app:layout_constraintTop_toBottomOf="@id/ivRoad3" />
+                <ImageView
+                    android:id="@+id/ivTag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="75dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tag_right"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivButton2" />
+                <TextView
+                    android:id="@+id/tvTag2Title"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="4"
+                    android:text="Your Target 50%"
+                    android:textColor="@color/text_black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton2"
+                    app:layout_constraintLeft_toRightOf="@id/ivTag2"
+                    app:layout_constraintTop_toTopOf="@id/ivButton2"/>
+                <ImageView
+                    android:id="@+id/ivRoad2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/road_2"
+                    app:layout_constraintTop_toBottomOf="@id/ivButton2" />
+
+                <ImageView
+                    android:id="@+id/ivButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lock_right"
+                    app:layout_constraintTop_toBottomOf="@id/ivRoad2" />
+
+                <ImageView
+                    android:id="@+id/ivTag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="75dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tag_left"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivButton1" />
+                <TextView
+                    android:id="@+id/tvTag1Title"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="4"
+                    android:text="Your Target 25%"
+                    android:textColor="@color/text_black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivButton1"
+                    app:layout_constraintRight_toLeftOf="@id/ivTag1"
+                    app:layout_constraintTop_toTopOf="@id/ivButton1"/>
+
+                <ImageView
+                    android:id="@+id/ivRoad1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/road_1"
+                    app:layout_constraintTop_toBottomOf="@id/ivButton1" />
+
+                <ImageView
+                    android:id="@+id/ivButtonStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/start_button"
+                    app:layout_constraintTop_toBottomOf="@id/ivRoad1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}">
+
+    <ScrollView
+        android:id="@+id/sc_loginform_container"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lin_loginform_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:src="@mipmap/icon128" />
+
+                <EditText
+                    android:id="@+id/edt_name"
+                    style="@style/edittext_style_registration"
+                    android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                    android:drawableLeft="@mipmap/userid"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/edt_name_hint"
+                    android:inputType="textCapSentences" />
+
+                <!--    <EditText
+                        android:id="@+id/edt_name"
+                        style="@style/edittext_style_registration"
+                        android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                        android:layout_weight="1"
+                        android:hint="@string/edt_name_hint"
+                        android:inputType="textCapSentences"/>-->
+
+
+                <EditText
+                    android:id="@+id/edt_mobile"
+                    style="@style/edittext_style_registration"
+                    android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                    android:drawableLeft="@mipmap/cell"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/edt_mobile_hint"
+                    android:inputType="number"
+                    android:maxLength="10" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/edt_emailid"
+                        style="@style/edittext_style_registration"
+                        android:background="@drawable/box3"
+                        android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                        android:hint="@string/edt_email_id_hint"
+                        android:inputType="textEmailAddress" />
+
+                    <!--
+                         <ImageView 
+                        android:id="@+id/img_selectemail"
+                        android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                        android:layout_marginRight="@dimen/margin_login_from_bwt_heading_edt"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_action_new"
+                        android:layout_alignParentRight="true"/>
+                    -->
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/edt_signup_password"
+                    style="@style/edittext_style_registration"
+                    android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                    android:drawableLeft="@mipmap/password"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/edt_password_signup_hint"
+                    android:inputType="textPassword" />
+
+                <EditText
+                    android:id="@+id/edt_signup_confirm_password"
+                    style="@style/edittext_style_registration"
+                    android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                    android:drawableLeft="@mipmap/password"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/edt_confirm_pass_signup_hint"
+                    android:inputType="textPassword" />
+
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxforview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text=" I Agree to the"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/termscondtion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/checkboxforview"
+                        android:layout_alignBottom="@+id/checkboxforview"
+                        android:layout_toRightOf="@+id/checkboxforview"
+                        android:text=" Terms &amp; Conditions."
+                        android:textColor="@color/Red"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_signup"
+                    style="@style/contact_button"
+                    android:layout_gravity="center"
+                    android:text="@string/btn_signup_text" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

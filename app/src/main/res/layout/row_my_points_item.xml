@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_8dp"
+    app:cardCornerRadius="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_16dp">
+
+        <TextView
+            android:id="@+id/tvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_14sp"
+            tools:text="January" />
+
+        <ImageView
+            android:id="@+id/ivDropDown"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/padding_8dp"
+            app:srcCompat="@drawable/ic_drop_down_grey" />
+
+        <TableLayout
+            android:id="@+id/tlTHList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMonth"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:stretchColumns="*">
+
+
+        </TableLayout>
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

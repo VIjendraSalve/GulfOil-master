@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="90"
+        android:centerColor="@color/club_gradient_top_n_bottom"
+        android:endColor="@color/club_gradient_top_n_bottom"
+        android:startColor="@color/club_gradient_top_n_bottom"
+        android:type="linear" />
+</shape>

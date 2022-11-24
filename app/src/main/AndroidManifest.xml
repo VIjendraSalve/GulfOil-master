@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.taraba.gulfoilapp">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- <uses-permission android:name="com.parse.starter.permission.C2D_MESSAGE" /> -->
+    <!--
+ <permission
+         android:name="com.taraba.gulfoilapp.permission.C2D_MESSAGE"
+         android:protectionLevel="signature" />
+
+     <uses-permission android:name="com.taraba.grassrootapp.permission.C2D_MESSAGE" />
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" /> <!-- This excludes Google TV, which is unfortunately included by virtue of not requiring a camera -->
+    <uses-feature android:name="android.hardware.touchscreen" /> <!-- TODO make this not required again after android.hardware.camera.any is available -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name=".AppConfig"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".YourDigitalRewardsActivity"
+            android:exported="true"/>
+        <activity android:name=".UCActivity"
+            android:exported="true"/>
+        <activity android:name=".HelpActivity"
+            android:exported="true"/>
+        <activity android:name=".KnowledgeCornerActivity"
+            android:exported="true"/>
+        <activity android:name=".YourDigitalRewardDetailsActivity"
+            android:exported="true"/>
+        <activity android:name=".HowToUseRewardsActivity"
+            android:exported="true"/>
+        <activity android:name=".royalty_user_view.proceed_order.ProceedDigitalRewardsOTPActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".MainDashboardActivity"
+            android:label="@string/title_activity_main_dashboard"
+            android:exported="true"/>
+        <activity android:name=".FlsDashboardActivity"
+            android:exported="true"/>
+        <activity android:name=".TermsAndConditionsActivity"
+            android:exported="true"/>
+        <activity android:name=".view.FullScreenImageActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".view.splash_pop_up.SplashPopUpActivity"
+            android:theme="@style/Theme.Transparent"
+            android:exported="true"/>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"
+            android:exported="true"/>
+
+        <activity
+            android:name=".royalty_user_view.main_activity.view.RoyalityMainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"/>
+
+        <receiver
+            android:name=".broadcast.UploadData"
+            android:label="NetworkChangeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"/>
+        <activity
+            android:name=".ForgotActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.MyTDS.MyTDSCertificateActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".OtpActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".crop.CropImageActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".royalty_user_view.otp.RoyaltyOtpActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".barcode.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:exported="true"/>
+        <activity
+            android:name=".GenuieCheckActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".ContactUsActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".NotificationDetailActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/> <!-- For Firebase notification -->
+        <activity
+            android:name=".AppDemoActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+
+        <service
+            android:name=".FCMNotification.MyAndroidFirebaseMsgService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

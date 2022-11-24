@@ -1,0 +1,208 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qy"
+    android:paddingBottom="@dimen/footer_bottom_padding"
+    tools:context="${relativePackage}.${activityClass}">
+
+    <LinearLayout
+        android:id="@+id/lin_mech_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_mechanic_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/edittext_textsize" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_sc_Logincontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lin_mech_code"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtmechanicregistration"
+            style="@style/login_heading_style"
+            android:layout_below="@+id/lin_mech_code"
+            android:layout_marginBottom="30dp"
+            android:text="@string/mechanic_registration"
+            android:textColor="#10357c" />
+
+        <EditText
+            android:id="@+id/edt_mobile_number_first"
+            style="@style/login_edittext_style"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/login_box"
+            android:hint="@string/edt_username_hint"
+            android:inputType="number"
+            android:maxLength="10"
+            android:paddingLeft="@dimen/edittext_drawable_padding"
+            android:textColor="@color/black"
+
+            />
+
+
+        <Button
+            android:id="@+id/btn_submit_mob_registration"
+            style="@style/contact_button"
+            android:layout_width="130.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center"
+            android:text="@string/btn_signup_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_retailer_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/textview_style_registration"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="50"
+            android:text="UIN"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_retailerId"
+            style="@style/textview_style_registration"
+            android:layout_weight="50" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_retialer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_retailer_code"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/textview_style_registration"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="50"
+            android:text="Retailer Name"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_retailerName"
+            style="@style/textview_style_registration"
+            android:layout_weight="50" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_retialer_name"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <LinearLayout
+                android:id="@+id/lin_loginform_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/lblShopName"
+                    style="@style/textview_style_registration"
+                    android:text="@string/m_shop_name" />
+
+                <EditText
+                    android:id="@+id/edt_m_shopname"
+                    style="@style/edittext_style_registration"
+                    android:layout_weight="1"
+
+                    android:inputType="textCapCharacters" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lblMobileNumber"
+                style="@style/textview_style_registration"
+                android:text="@string/m_mobile_no" />
+
+            <EditText
+                android:id="@+id/edt_m_mobilenumber"
+                style="@style/edittext_style_registration"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:maxLength="10"
+
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:text=""
+            android:textColor="@color/tab_color"
+
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_update"
+            style="@style/contact_button"
+            android:layout_width="140.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="Update Profile" />
+
+        <Button
+            android:id="@+id/btn_Resendotp"
+            style="@style/contact_button"
+            android:layout_width="140.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="Resend OTP"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/Appdemo"
+            android:textColor="@color/gold_color"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEnglish"
+                android:layout_width="@dimen/btneng_width"
+                android:layout_height="@dimen/btneng_height"
+                android:background="@color/gold_color"
+                android:text="English"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnHindi"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:background="@color/gold_color"
+                android:text="Hindi"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnTamil"
+
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:background="@color/gold_color"
+                android:text="Tamil"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnTelgu"
+
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:background="@color/gold_color"
+                android:text="Telgu"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAppDemoBack"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="35dp"
+            android:background="@color/gold_color"
+            android:gravity="center"
+            android:text="Back"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

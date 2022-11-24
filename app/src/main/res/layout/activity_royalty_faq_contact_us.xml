@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/royalty_background"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/footer_bottom_padding"
+    tools:context="com.taraba.gulfoilapp.ContactUsActivity">
+
+    <!-- <LinearLayout
+         android:id="@+id/lin_tool_bar_conatiner"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:visibility="gone">
+         <include
+             android:id="@+id/tool_bar"
+             layout="@layout/tool_bar"
+             ></include>
+     </LinearLayout>-->
+    <TextView
+        android:id="@+id/txt_contact_us_text"
+        style="@style/login_textview_style"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/btn_contactus"
+        android:textColor="@color/gold_color" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/contact_us_doc"
+                style="@style/login_textview_style_main"
+                android:gravity="left"
+                android:text="dfjdskfjjkjkldjsflkjdsklfjdslkfjdslkfjdslkjflsdkjfdskjflkdsjflksdjfl"
+                android:textAlignment="gravity"
+                android:textColor="@color/gold_color"
+                android:textSize="@dimen/text_size_btn" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"></LinearLayout>
+
+</LinearLayout>

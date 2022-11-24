@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize"
+    android:background="@drawable/unnati_mandala_art_background"
+    android:padding="@dimen/padding_16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_16dp">
+
+                    <LinearLayout
+                        android:id="@+id/llProductDetailsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/ivProduct"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.35"
+                            android:background="@drawable/image_corner_radius_bg"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/unnati_mandala_art_background"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.65"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tvRewardName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_8dp"
+                                android:layout_span="1"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_14sp"
+                                android:textStyle="bold"
+                                tools:text="Amazon Voucher" />
+                            <TableLayout
+                                android:id="@+id/tlOrderDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_10dp"
+                                android:collapseColumns="2"
+                                app:layout_constraintLeft_toRightOf="@id/ivProduct"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="left">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Points    :  "
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_12sp" />
+
+
+                                    <TextView
+                                        android:id="@+id/tvPoints"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_12sp"
+                                        android:textStyle="bold"
+                                        tools:text="30000" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="left">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Code      :  "
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_12sp" />
+
+                                    <TextView
+                                        android:id="@+id/tvCode"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_12sp"
+                                        android:textStyle="bold"
+                                        tools:text="520GU0" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="left">
+
+                                    <TextView
+                                        android:id="@+id/tv_tds_percent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="TDS(10%)      :  "
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_12sp" />
+
+                                    <TextView
+                                        android:id="@+id/tvTdsValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_12sp"
+                                        android:textStyle="bold"
+                                        tools:text="520GU0" />
+                                </TableRow>
+
+
+                            </TableLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_8dp">
+
+                            <RelativeLayout
+                                android:layout_width="76dp"
+                                android:layout_height="24dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/spnQuantity"
+                                    android:layout_width="56dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/edittext_spinner_bg"
+                                    android:entries="@array/spinner_quantity"
+                                    android:gravity="center" />
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/margin_24dp"
+                                    android:padding="4dp"
+                                    android:scaleType="centerInside"
+                                    app:srcCompat="@drawable/ic_drop_down_grey" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tvTotalPoints"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Points: "
+                                android:visibility="gone"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Reward Value  :  "
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_12sp" />
+
+
+                            <TextView
+                                android:id="@+id/tvRewardValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/milestone_journey_success"
+                                android:textSize="@dimen/text_size_12sp"
+                                android:textStyle="bold"
+                                tools:text="30000" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvConfirmOrderDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_16dp"
+                        android:gravity="left"
+                        android:textSize="@dimen/text_size_12sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/llProductDetailsContainer"
+                        tools:text="Description: \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nulla vestibulum, efficitur mauris vitae, vestibulum tellus. Mauris ante justo, malesuada sit amet vulputate sit amet, lobortis in dolor.e"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnPlaceOrder"
+                        style="@style/elite_dialog_purple_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="20dp"
+                        android:clickable="true"
+                        android:paddingLeft="@dimen/padding_24dp"
+                        android:paddingRight="@dimen/padding_24dp"
+                        android:text="@string/str_place_order"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvConfirmOrderDescription" />
+
+                </LinearLayout>
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

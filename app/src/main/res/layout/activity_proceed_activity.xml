@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Submit OTP for final verification \n OTP (One Time Password)"
+                android:textColor="@color/blue"
+
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+                <!--<TextView
+                    android:id="@+id/txt_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="OTP (One Time Password)"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp" />-->
+
+                <!-- <EditText
+                     android:id="@+id/edt_otp"
+                     style="@style/edittext_style"
+                     android:layout_marginTop="@dimen/margin_login_from_bwt_heading_edt"
+                     android:drawableLeft="@mipmap/cell"
+                     android:drawablePadding="10dp"
+                     android:inputType="number"
+                     android:maxLength="10" />-->
+
+                <EditText
+                    android:id="@+id/edt_otp"
+                    style="@style/login_edittext_style"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/otp_enter"
+                    android:paddingLeft="@dimen/edittext_drawable_padding"
+                    android:background="@drawable/otp_back"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="@dimen/edittext_textsize" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="299dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_back"
+                        style="@style/button_pink_log"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/btn_back"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        style="@style/button_pink_log"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:text="@string/btn_signup_text"
+                        android:background="@color/org101"
+                        android:layout_marginTop="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_v2_resend_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Did not received OTP? "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/tv_resend_otp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Resend OTP"
+                        android:textColor="@color/org102"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/footer_view"
+        layout="@layout/common_footer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom" />
+
+</RelativeLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/unnati_mandala_art_background"
+    tools:context=".ui.home.HomeFragment">
+    <!--region Notification Icon and Badge-->
+    <ImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="@dimen/notification_icon_width_48dp"
+        android:layout_height="@dimen/notification_icon_height_48dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:src="@drawable/unnati_notification_white_bg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vNotificationBadge"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/red_notification_badge"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--endregion-->
+
+    <!--region User Profile Details-->
+    <include
+        android:id="@+id/clUserProfileInfo"
+        layout="@layout/elite_user_profile_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--endregion-->
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+
+    app:layout_constraintTop_toBottomOf="@id/clUserProfileInfo">
+    <!--region Achivments-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llAchievementContainer"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:background="@drawable/half_transparent_black_bg"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_16dp">
+
+
+            <TextView
+                android:id="@+id/tvAchivmentLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Achievement"
+                android:textColor="@color/text_n_icon_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAchievement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/row_elite_achievement" />
+        </LinearLayout>
+        <!--endregion-->
+
+        <!--region Redeem Rewards-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llRedeemRewardsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:background="@drawable/half_transparent_black_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_16dp">
+
+            <TextView
+                android:id="@+id/tvRedeemRewardsLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_redeem_rewards"
+                android:textColor="@color/text_n_icon_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/tvRedeemRewardsViewMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_view_more"
+                android:textColor="@color/text_n_icon_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvRedeemRewardsLable"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRedeemRewards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16dp"
+                    android:orientation="horizontal"
+
+                    android:paddingBottom="@dimen/padding_24dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:spanCount="2"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_royal_redeem_rewards" />
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--endregion-->
+
+    </LinearLayout>
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

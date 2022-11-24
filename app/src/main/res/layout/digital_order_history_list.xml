@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="beforeDescendants"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/org100"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org100"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Order Date"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org100"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Order Id"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org100"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical|top"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Reward Name"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org100"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Quantity"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org100"
+                        android:gravity="left|top"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Status"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/org99"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:id="@+id/tv_order_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org99"
+
+                        android:maxLines="1"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="2017-04-07"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+
+                    <TextView
+                        android:id="@+id/tv_order_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@color/org99"
+
+                        android:paddingLeft="14dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="123456"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+
+                    <TextView
+
+                        android:id="@+id/tv_reward_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org99"
+
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="Amazon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+
+                    <TextView
+                        android:id="@+id/tv_order_quantity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org99"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text="02"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+                    <TextView
+                        android:id="@+id/tv_order_status"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/org99"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="3dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/edittext_textsize_sub" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_view_codes"
+                style="@style/contact_button_order_history"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1.7"
+                android:background="@color/org101"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="View\nCodes" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <!-- <Button
+                 android:id="@+id/btn_Resendotp"
+                 android:text="Resend OTP"
+                 style="@style/button_yellow"
+                 />-->
+
+            <Button
+                android:id="@+id/btn_Resendotp"
+                style="@style/contact_button_order_history"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@color/org101"
+                android:paddingLeft="1dp"
+                android:text="Resend OTP" />
+
+
+            <!-- <Button
+                 android:id="@+id/btn_Submitotp"
+                 android:text="Submit OTP"
+                 style="@style/button_yellow"
+                 />-->
+
+            <Button
+                android:id="@+id/btn_Submitotp"
+                style="@style/contact_button_order_history"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@color/org101"
+                android:text="Submit OTP" />
+
+
+            <!--<Button
+                android:id="@+id/btnCancelOrder"
+                android:text="Cancel Order"
+                style="@style/button_pink"
+                />-->
+
+
+            <Button
+                android:id="@+id/btnCancelOrder"
+                style="@style/contact_button_order_history"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:background="@color/org101"
+                android:text="Cancel Order" />
+            <!--  <Button
+                  android:id="@+id/btnOrderDetails"
+                  android:text="Order Details"
+                 style="@style/button_yellow"
+                  />-->
+
+            <!-- <Button
+                 android:id="@+id/btnOrderDetails"
+                 style="@style/contact_button_order_history"
+                 android:layout_width="@dimen/button_width_order_history"
+                 android:layout_height="@dimen/button_height_order_height"
+                 android:text="Order Details"
+                 android:layout_marginTop="3dp"
+                 android:background="@color/org101"/>-->
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

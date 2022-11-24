@@ -1,0 +1,830 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Gulf Oil</string>
+    <string name="btn_forgetpass"> Forgot Password</string>
+    <!--Navigation drawer-->
+
+
+    <string-array name="array_name">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <array name="nav_drawer_icons">
+
+        <!--<item>@mipmap/home</item>
+        <item>@mipmap/my_profile</item>
+        <item>@mipmap/transaction</item>
+        <item>@mipmap/notofication</item>
+        <item>@mipmap/rewards</item>
+        <item>@mipmap/verification</item>
+        <item>@mipmap/help</item>
+        <item>@mipmap/about</item>
+        <item>@mipmap/terms_condtions</item>
+        <item>@mipmap/faq</item>
+        <item>@mipmap/registration</item>
+        <item>@mipmap/search</item>
+        <item>@mipmap/logout</item>-->
+
+
+        <item>@drawable/nav_home</item>
+        <item>@drawable/nav_view_profile</item>
+        <item>@drawable/nav_view_trasactions</item>
+        <item>@drawable/notifications1</item>
+        <item>@drawable/nav_view_rewards</item>
+        <item>@drawable/genuine_check1</item>
+        <item>@drawable/nav_help</item>
+        <item>@drawable/about1</item>
+        <item>@drawable/terms_condtionsdrawer</item>
+        <item>@drawable/faqdrawer</item>
+        <item>@drawable/nav_edit_registration</item>
+        <item>@drawable/nav_member_search</item>
+        <item>@drawable/nav_logout</item>
+        <item>@drawable/nav_change_password</item>
+        <item>@drawable/nav_version</item>
+        <item>@drawable/notification_id</item>
+        <item>@drawable/ic_digital_reward</item>
+        <item>@drawable/ic_campaign_rewards</item>
+        <!--     <item>@mipmap/home</item>
+        <item>@drawable/my_profile1</item>
+        <item>@drawable/transactions1</item>
+        <item>@drawable/notifications1</item>
+        <item>@drawable/reward1</item>
+        <item>@drawable/genuine_check1</item>
+        <item>@drawable/help1</item>
+        <item>@drawable/about1</item>
+        <item>@mipmap/terms_condtions</item>
+        <item>@mipmap/faq</item>
+        <item>@drawable/add_mechanic_n</item>
+        <item>@mipmap/search</item>
+        <item>@drawable/logout1</item>
+-->
+
+
+    </array>
+
+    <array name="spinner_entries">
+        <item>Search By Mobile Number</item>
+        <item>Search By Dealer Code</item>
+        <item>Search By Shop Name</item>
+    </array>
+
+    <array name="spinner_filter_entries">
+        <item>Low to high</item>
+        <item>High to low</item>
+    </array>
+    <array name="spinner_quantity">
+        <item>Qty:1</item>
+        <item>Qty:2</item>
+        <item>Qty:3</item>
+        <item>Qty:4</item>
+        <item>Qty:5</item>
+    </array>
+
+    <array name="spinner_quater">
+        <item>Q1</item>
+        <item>Q2</item>
+        <item>Q3</item>
+        <item>Q4</item>
+    </array>
+
+    <!--Login -->
+    <string name="btn_login">Login</string>
+    <string name="edt_username_hint">Username</string>
+    <string name="edt_password_hint">Password</string>
+
+    <string name="Unique_id">Unique Id</string>
+
+    <!-- Sign Up -->
+    <string name="edt_name_hint">Full Name</string>
+    <string name="edt_mobile_hint">Mobile Number</string>
+    <string name="edt_email_id_hint">Email Id</string>
+    <string name="edt_password_signup_hint">Password</string>
+    <string name="edt_confirm_pass_signup_hint">Confirm Password</string>
+    <string name="btn_signup_text">SUBMIT</string>
+
+    <string name="otp_enter">Enter OTP </string>
+    <string name="otp_submit">Submit</string>
+    <string name="edt_passwordold_hint">Old Password</string>
+    <string name="edt_passwordnewconform_hint">Confirm New Password</string>
+    <string name="edt_passwordnew_hint">New Password</string>
+
+
+    <string name="you_are_not_updated_title">The app is not updated</string>
+    <string name="you_are_not_updated_message">Press YES to update the app on Google Play, press NO to exit.</string>
+    <!--===================Gulf Oil==================-->
+    <string name="m_shop_name">Shop Name</string>
+    <string name="m_shop_address_line1_name">Shop Address Line 1</string>
+    <string name="m_shop_street_address">Shop Street Address(Complete Address)</string>
+    <string name="m_shop_landmark">Shop Landmark</string>
+    <string name="m_shop_pincode">Shop Pincode</string>
+    <string name="m_shop_subdistrict">Shop Subdistrict</string>
+    <string name="m_shop_city_name">Shop City/Town Name</string>
+    <string name="m_shop_state">Shop State</string>
+    <string name="m_alternate_mobile_number">Alternate Mobile number</string>
+    <string name="m_shop_landline_number">Shop Landline No</string>
+    <string name="m_email">Email</string>
+    <string name="m_residential_address_line1">Residential Address Line 1</string>
+    <string name="m_residential_address_line2">Residential Address Line 2</string>
+    <string name="m_residential_landmark">Residential  Landmark</string>
+    <string name="m_residential_pincode">Residential Pincode</string>
+    <string name="m_residential_town">Residential City/Town Name</string>
+    <string name="m_residential_state">Residential Address - State</string>
+    <string name="m_marriage_anniversary_date">Marriage Anniversary Date</string>
+    <string name="m_spouse_name">Spouse Name</string>
+    <string name="m_retailer_gender">Dealer Gender</string>
+    <string name="m_no_of_children">No of Children</string>
+    <string name="m_lucky_draw_contest">Lucky Draw Consent</string>
+    <string name="m_lucky_draw_question1">Which of these is a Gulf Synthetic Engine Oil?</string>
+    <string name="m_lucky_draw_answer1">Lucky Draw Answer1</string>
+    <string name="m_lucky_draw_question2"> Which of these products is a Ashok Leyland Co-branded engine oil?</string>
+    <string name="m_communication_consent">Communication Consent</string>
+    <string name="m_distributor_id">Distributor ID</string>
+    <string name="m_distributor_name">Distributor Name</string>
+    <string name="m_retailerId">Dealer ID:</string>
+
+
+    <string name="m_first_name">Name of Dealer Proprietor</string>
+    <string name="m_last_name">Last Name</string>
+    <string name="m_gender">Gender </string>
+    <string name="m_male">Male</string>
+    <string name="m_female">Female</string>
+    <string name="spn_state">State</string>
+    <string name="spn_district">District</string>
+    <string name="m_nominie_name">Nominee Name </string>
+    <string name="m_nominie_relation">Relation To The Insured</string>
+    <string name="m_mother_name">Mothers Maiden Name </string>
+    <string name="m_workshopname">WorkShop Name</string>
+    <string name="m_district">Shop District</string>
+    <string name="m_pincode">Pincode </string>
+    <string name="m_taluka">Taluka</string>
+    <string name="m_village_city_town">Village / City / Town</string>
+    <string name="m_shop_add">Shop Address</string>
+    <string name="m_landmark">Landmark </string>
+    <string name="m_ownerMobNo">Owner Mobile Number </string>
+    <string name="m_emailAsddress">Email Address</string>
+    <string name="m_dateofBirth">Date of Birth</string>
+    <string name="m_registrationfillDate">Registration Filling Date</string>
+    <string name="m_sector">Sector </string>
+    <string name="m_automotive">Automotive </string>
+    <string name="m_tractor">Tractor</string>
+    <string name="m_specialization">Specialization</string>
+    <string name="m_engine">Engine</string>
+    <string name="m_hydraulics">Hydraulics </string>
+    <string name="m_transmission">Transmission</string>
+    <string name="m_DentingPanting">Denting &amp; Painting</string>
+    <string name="m_multiple">Multiple</string>
+    <string name="m_reborer">Reborer </string>
+    <string name="m_toatalSperConsumptioperMonth">Total Spare Consumption Per Month(INR) </string>
+    <string name="m_sperpartconsuptionPErMonth">Spares Parts Consumption For M&amp;M Vehicles Per Month(INR)</string>
+    <string name="m_mmgenuinesparespartsconsuptionPerMoth">M&amp;M Genuine Spares Parts Consumption Per Month</string>
+    <string name="m_totalVehicalsperMonth">Total Vehicles/Month(Nos)</string>
+    <string name="m_mahindraVehicalsperMonth">Mahindra Vehicles/Month(Nos)</string>
+    <string name="m_noofMechanics">Number of Mechanics</string>
+
+    <string name="msg_error">Error</string>
+    <string name="msg_invalid_value">Invalid value</string>
+
+    <string name="msg_default_status">Place a barcode inside the viewfinder rectangle to scan it.</string>
+    <string name="msg_default_format">Format</string>
+    <string name="msg_default_meta">Metadata</string>
+    <string name="msg_default_time">Time</string>
+    <string name="msg_default_type">Type</string>
+
+    <string name="menu_help">Help</string>
+    <string name="menu_history">History</string>
+    <string name="menu_settings">Settings</string>
+    <string name="msg_default_mms_subject">Hi</string>
+
+    <string name="msg_intent_failed">Sorry, the requested application could not be launched. The barcode contents may be invalid.</string>
+    <string name="button_ok">OK</string>
+    <string name="msg_bulk_mode_scanned">Bulk mode: barcode scanned and saved</string>
+    <string name="msg_camera_framework_bug">Sorry, the Android camera encountered a problem. You may need to restart the device.</string>
+    <string name="button_share_by_email">Share via email</string>
+    <string name="button_share_by_sms">Share via SMS</string>
+    <string name="button_web_search">Web search</string>
+    <string name="button_custom_product_search">Custom search</string>
+    <string name="result_text">Found plain text</string>
+
+    <string name="history_empty">Empty</string>
+    <string name="history_empty_detail">No barcode scans have been recorded</string>
+
+    <string name="m_membership_id">Dealer Code</string>
+    <string name="m_workshop_name">Shop Name</string>
+    <string name="name">Edit Registration</string>
+
+
+    <string name="m_mobile_no">Mobile Number </string>
+
+    <string name="help_doc"> <![CDATA[  <body style="text-align:justify;"><p>1. The Gulf Unnati Program (Program) will be governed by the terms and conditions mentioned
+
+below. The Program is a volume based program for select Gulf Oil Dealers operating under
+
+authorised Gulf Oil Automotive distributors only. The participants (dealer) agrees that he/she
+
+has read and understood the T&C  by participating in the program and agrees to abide by the
+
+same.</p>
+<p align="justify">2. The program is valid from July 1st 2016 to March 31 st 2018</p>
+<p align="justify">3. Gulf Oil is the organizer of the Gulf Unnati (Dealer Loyalty Program)</p>
+<p align="justify">4. The program is extended to select Gulf Oil Dealers on invitation only. Only dealers who have purchases a min average volume of 100 liters of Gulf Oil products are eligible to enter the program. Gulf Oil reserves the right to choose the dealer for this program
+<p align="justify">5. The program is valid on purchase of Gulf Oil products from authorised Gulf Oil Automotive Distributors only.</p>
+<p align="justify">6. The dealer will be able to earn points based on the volume purchased and other bonuses as mentioned in this brochure</p>
+<p align="justify">7. The dealer can qualify in only one of the Tiers based on the volume purchased in each of the periods July 2016 to March 2017 & April 2017 to March 2018 during the program</p>
+<p align="justify">8. Non-availability of stocks will be entertained as a valid reason for not reaching the minimum volume criteria.</br></p>
+<p align="justify">9. The benefits/gifts under this program are not transferable and not for sale and cannot be exchanged for cash</p>
+<p align="justify">10. Gulf Oil employees, their spouses & children, Authorised distributors, distributor staff, spouses & children and persons connected to this program are not authorized to participate in this program</p>
+<p align="justify">11. Gulf Oil will not accept any responsibility for redemption requests being lost, delayed or misdirected or for technical reasons in telecommunication networks, internet access, or otherwise preventing the participant from redeeming the points</p>
+<p align="justify">12. The decision of Gulf Oil will be final and binding in all matters pertaining to the program</p>
+<p align="justify">13. Gulf Oil will provide an App to the dealers for checking point balance and other program related information. Each dealer will be given login credential to access the app.</p>
+<p align="justify">14. Gulf Oil will not be responsible if the dealer has shared his/her login credentials or membership ID with any third party and for any redemption of gifts from his/her login or membership ID</p>
+<p align="justify">15. The program and benefits under the program are subject to Income Tax and such other taxes as may be applicable in force from time to time</br></p>
+<p align="justify">16. Gulf Oil reserves the right to alter, change or modify the T&C of the program at any time it is in force at its discretion and without any prior notice and without assigning any reason</p>
+<p align="justify">17. In the event of any inconsistency between these T&C and any advertising, publicity and other materials relating to or in connection with the program, these T&C will prevail</p>
+<p align="justify">18.  Gulf Oil reserves the right to postpone/cancel the program for any reason whatsoever including due to the provisions of any Statutes of Rules & Regulations as may be in force from time to time</p>
+<p align="justify">19. Any dealer found to be getting points by improper means in the opinion of Gulf Oil would be disqualified from the program and the discretion of his/her reinstatement into the program and points redemption will lie with Gulf Oil</p>
+<p align="justify">20. The decision to disqualify from the program certain dealers would lie solely with Gulf Oil and shall be final and binding. In case of disqualification, Gulf Oil will inform the concerned dealer at least 1 month in advance and the dealer will be entitled to redeem the points accumulated up to the date of disqualification, provided the minimum points accumulation criteria is fulfilled. The redemption will happen in only one of the two redemption windows provided in the program.  </p>
+<p align="justify">21. The participant shall not bring any action, claim, damages, or other proceedings against Gulf Oil, it is Directors, agents, employees, licensees, or assigns, the event sponsors, or any company or persons associated with Gulf Oil in relation the program.</p>
+<p align="justify">22. The participant undertakes to indemnify Gulf Oil, it is Directors, agents, employees, licensees, and assigns, from all claims demands, damages, or expenses as a result of breaching these T&C, negligence or otherwise arising out of their participation in the program</p>
+<p align="justify">23. Any disputes with regard to the program will be subject to the exclusive jurisdiction of competent courts in Mumbai only.</br></p>
+<p align="center"><strong>Membership, Point Accumulation & Redemption Rules</strong></p>
+<p align="justify">1. Every participant will be assigned a unique membership ID on enrolment</p>
+<p align="justify">2. The membership ID will be active for the entire duration of the program</p>
+<p align="justify">3. Every participant can have only one membership ID. No two membership ID\'s can be clubbed</p>
+<p align="justify">4. All communication will be sent to the registered mobile number and address provided by the participant during enrolment and it is the responsibility of the participant to inform Gulf Oil about any changes</br></p>
+<p align="justify">5. All communication will be deemed to have been received by the participant and Gulf Oil bears no responsibility for communication not received by any communication media</br></p>
+<p align="justify">6. No cash top-ups (part cash, part point payment) are allowed while redeeming rewards</p>
+<p align="justify">7. In case there is any dispute between the participant and Gulf Oil, the participant can continue to his/her transactions with Gulf Oil and earn points but no redemptions will be allowed till resolution</p>
+<p align="justify">8. Disputes not resolved by the end of any financial year (31st March 2017 or 31st March 2018) following the year of the dispute will lead to the dissolution of the membership and expiry of the points</p>
+<p align="justify">9. Redemption requests cannot be reversed by the participants</p>
+<p align="justify">10. There are two redemption windows provided in the program. First redemption window in April 2017 for points accumulated from July 2016 to March 2017. The second redemption window after the end of the program in March 2018. A window of 3 Months will be provided for both the redemption cycles. Post the second redemption window the points will lapse. Redemption requests 3 months after the closure of the program in March 2018 will not be entertained and the points earned will be forfeited by the participant </p>
+<p align="justify">11. The participant earns points on every liter of purchase of Gulf Oil products mentioned in the brochure. The points will be credited on a monthly basis./p>
+<p align="justify">12. If any sales are retrospectively recognized in the system, then its impact if any, will in the month of recognition, for points or tiers or any other benefits</p>
+<p align="justify">13. If any sales are reversed, the impact, if any, will be in the month of recognition of the reversal. The impact will not be retrospectively applied</p>
+<p align="justify">14. No points or benefits in the program can be transferred from one participant to another</p>
+<p align="justify">15. Points earned by one participant cannot be combined the points earned by another participant</p>
+<p align="justify">16. If there is a change in points allocated  for any product or voucher, then the benefit, if any will be passed  onto the participant in the form of Bonus points, or refund in points, if applicable</p>
+<p align="justify">17. The rewards depicted in the Gulf Oil Unnati Brochure are only indicative and the actual reward or prize may vary. The points value and rewards are subject to change depending on the availability of the reward</p>
+<p align="justify">8. It will take a minimum of 6 to 8 weeks to process the rewards. Gulf Oil will endeavour to keep the participant informed of any delays</p>
+<p align="justify">19. All taxes as applicable and incidental expenses in connection with the Gulf Oil Unnati Rewards will be borne by the participant.</p>
+<p align="justify">20. Gulf Oil will not be liable for any deficiencies or material defects in the rewards and prizes offered</p>
+<p align="justify">21. Guarantee if any of the rewards/products will lie with the manufacturer and not Gulf Oil</p>
+<p align="justify">22. All Gulf Oil Unnati Rewards are subject to availability and supply restrictions. Gulf Oil may without notice, withdraw or substitute any reward for any reward of similar brand (whether or not of comparable value and nature). </p>
+<p align="justify">23. Gulf Oil, at its sole discretion may replace or add any Service Partner at any point of time </p>
+<p align="justify">24. The participant will not be entitled to any refund or credit or exchange for the points redeemed</p>
+<p align="justify">25. Gulf Oil Unnati Rewards cannot be exchanged for cash, points or any other form of goods or services except for the Gulf Oil Unnati Rewards displayed in the brochure</br></p>
+<p align="justify">26. The participant shall ensure that he/she verifies the reward once received and notify Gulf Oil at the helpdesk within 48 hours. In case of vouchers, the participant shall ensure that the envelope has not been tampered with. Gulf Oil shall not entertain any complaints post acknowledgement or delivery or acceptance of the Gulf Oil Unnati Rewards by the participant</p>
+<p align="justify">27. General Gift Voucher Terms & Conditions</p>
+<p align="justify">a. Gift vouchers cannot be exchanged for cash or for vouchers or smaller denominations</p>
+<p align="justify">b. Vouchers cannot be refunded or renewed</p>
+<p align="justify">c. Voucher is valid for one time purchase only. No cash will be refunded if the merchandise purchased is less than the amount specified on the voucher/p>
+<p align="justify">d. Requests for duplicate vouchers and extensions will not be accepted</p>
+<p align="justify">e. The holder of the voucher is deemed to be the beneficiary</p>
+<p align="justify">f. T&C of the specified respective brands will be applicable as specified on the vouchers or website.</p>
+</body>
+
+ ]]>  </string>
+    <string name="btn_contactus"><u>Call Toll-Free Number</u></string>
+
+    <!-- DashboardActivity -->
+    <string name="txt_myprofile">My Profile</string>
+    <string name="d_retailer_id">Retailer ID</string>
+    <string name="d_retailer_name">Retailer Name</string>
+    <string name="d_fullname">Name </string>
+    <string name="d_mobile">Mobile No. </string>
+    <string name="d_altmobile">Alternate Mobile No.</string>
+    <string name="d_shop_name">Shop Name</string>
+    <string name="d_distributor_id">Distributor ID</string>
+    <string name="d_email">Email ID</string>
+    <string name="d_emp_id">Employee ID</string>
+
+    <string name="internet_connection_error">Currently Internet connection is not avalible, You data will be submited automatically</string>
+    <string name="add_codes">You can add/scan upto 10 codes at a time.</string>
+
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
+    <string name="commimng_soon">Coming Soon...</string>
+
+    <string name="about_program"><![CDATA[ <p>The eMPOWER loyalty program stands for empowerment. Its purpose is to enrich and facilitate our growth, while further empowering our existing relationships with our channel partners. You are a valued partner and an integral part of our business. We know you share a passion for excellence and an insatiable appetite for growth. Without your unyielding support and dedication, we couldn\'t deliver the best products to millions of Indians and ensure the best total customer experience, time and again. </p>
+<p>Your customers count on you to provide the best genuine spare parts and meet the constantly changing demands of the markets. So to celebrate you and all the Mahindra family of dealers everywhere in India, we have decided to launch the \"eMPOWER Loyalty Program\". </p>
+<p>This program will help to further our mutually profitable relationship and ultimately ensure a win-win for both of us.</p>
+<p>Our periodic campaigns and incentive programs will help to launch new products and drive sales. We realize your potential and want to reward you for your efforts. Not only on what you sell, but also how you manage and drive our brand.</p> ]]></string>
+    <string name="gulf_retailer_faqs_data" formatted="false"><![CDATA[
+   <strong>Gulf Unnati FAQ\'s - App/ Call center<br></strong><br>
+   <strong>(Call center) What is Gulf Unnati?<br></strong>
+Gulf Unnati is a points-based loyalty program for dealers. Every enrolled dealer can accumulate Unnati points on purchase of every litre of Gulf\'s wide range of lubricants.
+<br>
+<br>
+   <strong>1. Can I download the Gulf Unnati App on my non-Android smartphone?<br></strong>
+
+No, Gulf Unnati is an invite-only program with an app that can be downloaded on any android smartphone only.
+<br>
+<br>
+
+<strong>2. Can I be a part of the Gulf Unnati program without any invite?</strong>
+<br>
+No, Gulf Unnati is an invite-only program. Retailers (exclusive lube shops, spare part outlets & Gulf GRS) purchasing more than 100 liters per month will be invited to join the program. Contact your Gulf Sales representative (Front line sales representative) for more information.
+<br>
+<br>
+
+<strong>3. I am a member, what is the validity of the membership?</strong><br>
+The membership is valid for the duration of the program period, i.e. July 1st 2016 to March 31st 2018.
+<br><br>
+
+<strong>4. I have not received the OTP during the registration process, I entered the correct mobile number, what should I do?</strong><br>
+
+If you haven\'t received the OTP even if the entered mobile number is correct, ask your Gulf Sales representative to resend the OTP through the option in the app. The OTP is valid for 24 hrs from the time it gets generated.<br><br><br>
+
+<strong>5. I need to update my profile info.</strong><br>
+For updating or editing any info of the profile(except Shop Name and Mobile no.) connect with Unnati Customer Care support at 18002094470 or contact your Gulf Sales representative. For Shop name and Mobile no. change, please contact your Gulf Sales representative. Retailer ID & Birth date cannot be changed once registered.
+<br><br>
+<strong>6. I made a purchase through Gulf Unnati but it doesn\'t reflect in my account.</strong><br>
+Please contact Gulf Unnati Customer Care support at 18002094470 and register your complaint. You can also get in touch with the Gulf Sales representative (Front line sales representative) to resolve this issue.
+<br><br>
+<strong>7. I ordered a particular product as my redemption, how do I track my order?</strong><br>
+You can view your reward status on the Unnati app or contact Gulf Unnati Customer Care support at 18002094470. Our customer care executive will answer your queries.
+<br><br>
+<strong>8. I have accumulated points, when can I start redeeming?</strong><br>
+The redemption window is when the accumulated points can be redeemed.
+Unnati Redemption windows:
+Mid April 2017 to June 2017 for the first financial year (July 2016 to March 2017)
+April 2018 to Jun 2018 for the second financial year (April 2017 to March 2018)
+<br><br>
+<strong>9. Can the accumulated points be redeemed for cash instead of a catalogue voucher?</strong><br>
+No, the points cannot be redeemed for cash or cash vouchers. Only catalogue voucher can be redeemed against the accumulated points.
+<br><br>
+<strong>10. What if I have not redeemed points in my account beyond the validity of the program?</strong><br>
+If you have points which are not redeemed in the second redemption window, they will get lapsed.
+<br><br>
+<strong>11. What are the different bonus points and what are the benefits of them?</strong><br>
+
+There are different bonus points in the program through which you can earn additional points along with your base points. The details and benefits are:
+<br>* Birthday: Earn 5% bonus points over and above the base points for every purchase made during your birthday month.
+<br><br>* Diwali: Earn 5% bonus points over and above the base points for every purchase made during the Diwali month.
+<br><br>* New Year: Earn 5% bonus points over and above the base points for every purchase made during the month of January.
+<br><br>* Consistency: Earn 5% bonus points on purchasing Gulf Unnati products consistently throughout the program.
+<br><br>* Promo/Campaign Bonus Points: You can also earn additional bonus points provided by the company on any on going campaigns or promotions run in the Gulf Unnati scheme period.Campaign communication will be send to you via SMS at appropriate time during the scheme period.
+<br><br>
+<strong>12. What is the criteria for eligibility for earning consistency bonus?</strong><br>
+An eligible retailer for consistency bonus is that who makes a purchase in atleast 7 out of 9 months, during the first year of the program; & 9 out of 12 months in the second year of the program.
+<br><br>
+<strong>13. What is birthday month bonus points?</strong><br>
+Birthday month bonus points is additional 5% bonus points provided by the company, over and above the base points on every purchase during the month of the retailer\'s birthday.
+<br><br>
+<strong>14. What is the New Year bonus points?</strong><br>
+New Year bonus points is additional 5% bonus points provided by the company, over and above the base points on every purchase during the month of Jan.
+<br><br>
+<strong>15. When will I get to view my monthly points?</strong><br>
+Points get accumulated monthly. You can view your monthly points on the 15th day of the consequent month. For example, the points earned in November will reflect on the 15th of December. You will also receive an SMS of your monthly points earned.
+<br><br>
+<strong>16. How can I view the reward catalogue, what are the rewards and what denominations?</strong><br>
+The reward catalogue can be viewed on the app. If you have not downloaded the app, visit playstore to download the Gulf Unnati app and get started.
+<br><br>
+<strong>17. What is the minimum no of points to redeem?</strong><br>
+You need to have accumulated atleast 850 points in order to be eligible to redeem during the consequent redemption window.
+<br><br>
+<strong>18. What is my login id?</strong><br>
+The login id is your Unique retailer code.
+<br><br>
+<strong>19. How can i change my password?</strong><br>
+Click on Forgot Password on the login page. You will receive an OTP on your registered mobile number. Entering the OTP will give you the steps for resetting the password.
+<br><br>
+
+]]></string>
+    <string name="gulf_fls_faqs_data" formatted="false"><![CDATA[
+    <strong>Gulf Unnati FAQ\'s - App/ Call center<br></strong><br>
+   <strong>(Call center) What is Gulf Unnati?<br></strong>
+Gulf Unnati is a points-based loyalty program for dealers. Every enrolled dealer can accumulate Unnati points on purchase of every litre of Gulf\'s wide range of lubricants.
+<br>
+<br>
+   <strong>1. Can I download the Gulf Unnati App on my non-Android smartphone?<br></strong>
+
+No, Gulf Unnati is an invite-only program with an app that can be downloaded on any android smartphone only.
+<br>
+<br>
+
+<strong>2. Can Retailer be a part of the Gulf Unnati program without any invite?</strong>
+<br>
+No, Gulf Unnati is an invite-only program. Retailers (exclusive lube shops, spare part outlets & Gulf GRS) purchasing more than 100 liters per month will be invited to join the program.
+<br>
+<br>
+
+<strong>3. What is the validity of the Retailer membership?</strong><br>
+The membership is valid for the duration of the program period, i.e. July 1st 2016 to March 31st 2018.
+<br><br>
+
+<strong>4. If the retailer has not received the OTP during the registration process, even though he has entered the correct mobile number, what should I do?</strong><br>
+
+If  the retailer hasn\'t received the OTP even if the entered mobile number is correct, please resend the OTP through the available option in the app. The OTP is valid for 24 hrs from the time it gets generated.<br><br><br>
+
+<strong>5. If retailer needs to update his profile info.</strong><br>
+You can edit or update any retailer information before submitting the OTP (Gulf Sales representative verified stage of registration).For updating or editing any info of any active retailer (except Shop name and Mobile number), connect with Unnati Customer Care support at 18002094470 or You can edit via member search tab in the App. Shop Name and Mobile no. of retailers can be changed only with approvals from your respective Area Managers, you need to forward the approval mail to GRG support ID: gulfoilunnati@gulfoil.grgrewards.in. Retailer ID & Birth date cannot be changed once registered.
+<br><br>
+<strong>6. If retailer has made a purchase through Gulf Unnati but it doesn\'t reflect in his account.</strong><br>
+Please contact Gulf Unnati Customer Care support at 18002094470 or mail us  at gulfoilunnati@gulfoil.grgrewards.in and register complaint with details of the retailer.
+
+<br><br>
+<strong>7. If retailer has ordered a particular product as his redemption, how do he track his order?</strong><br>
+
+
+Retailer can view his reward status on the Unnati app or contact Gulf Unnati Customer Care support at 18002094470. Our customer care executive will answer his queries.
+<br><br>
+<strong>8. When can Retailer start redemption of his accumulated points?</strong><br>
+The redemption window is when the accumulated points can be redeemed.
+Unnati Redemption windows:
+Mid April 2017 to June 2017 for the first financial year (July 2016 to March 2017)
+April 2018 to Jun 2018 for the second financial year (April 2017 to March 2018)
+<br><br>
+<strong>9.  Can the accumulated points by Retailer be redeemed for cash instead of a catalogue vouchers?</strong><br>
+No, the points cannot be redeemed for cash or cash vouchers. Only catalogue vouchers can be redeemed against the accumulated points.
+<br><br>
+<strong>10. What if retailer has not redeemed points in his account beyond the validity of the program?</strong><br>
+If retailer has points which are not redeemed during the second redemption window, they will get lapsed.
+<br><br>
+<strong>11. What is the Gulf Unnati support email id?</strong><br>
+
+You can write to us at gulfoilunnati@gulfoil.grgrewards.in
+<br><br>
+<strong>12. What are the different bonus points and what are the benefits of them?</strong><br>
+There are different bonus points in the program through which the retailer can earn additional points along with base points. The details and benefits are:
+<br>* Birthday: Retailer earns 5% bonus points over and above the base points for every purchase made during retailer birthday month.
+<br><br>* Diwali: Retailer earns 5% bonus points over and above the base points for every purchase made during the Diwali month.
+<br><br>* New Year: Retailer earns 5% bonus points over and above the base points for every purchase made during the month of January.
+<br><br>* Consistency: Retailer earns 5% bonus points on purchasing Gulf Unnati products consistently throughout the program.
+<br><br>* Promo/Campaign Bonus Points: Retailer can also earn additional bonus points provided by the company on any on going campaigns or promotions run in the Gulf Unnati scheme period.Campaign communication will be send to you via SMS at appropriate time during the scheme period.
+<br><br>
+<strong>13. What is the eligibility criteria of retailer for earning consistency bonus?</strong><br>
+An eligible retailer for consistency bonus is that who makes a purchase in atleast 7 out of 9 months, during the first year of the program; & 9 out of 12 months in the second year of the program.
+<br><br>
+<strong>14. What is birthday month Bonus points?</strong><br>
+Birthday month bonus points is additional 5% bonus points provided by the company, over and above the base points on every purchase during the month of the retailer\'s birthday.
+<br><br>
+<strong>15. What is the New Year Bonus points?</strong><br>
+New Year bonus points is additional 5% bonus points provided by the company, over and above the base points on every purchase during the month of Jan.
+<br><br>
+<strong>16. When will retailer get to view his monthly points?</strong><br>
+Points get accumulated monthly. Retailer can view his monthly points on the 15th day of the consequent month. For example, the points earned in November will reflect on the 15th of December. Retailer also receives an SMS of his monthly points earned.
+<br><br>
+<strong>17. How can retailer view the reward catalogue, what are the rewards and what denominations?</strong><br>
+The reward catalogue can be viewed on the app. If retailer has not downloaded the app, please ask him to download the Gulf Unnati app from play store and get started.
+<br><br>
+<strong>18. What is the minimum no of points to redeem?</strong><br>
+Retailer needs to have accumulated atleast 850 points in order to be eligible to redeem during the consequent redemption window.
+<br><br>
+<strong>19. What is my login id?</strong><br>
+For retailers, the login id is his Unique retailer code. For Gulf employees, the login id is their employee id.
+<br><br>
+<strong>20. How can i change my password?</strong><br>
+Click on Forgot Password on the login page. You will receive an OTP on your registered mobile number. Entering the OTP will give you the steps for resetting the password.
+<br><br>
+
+]]></string>
+
+
+    <string name="faqs_data"><![CDATA[ <strong>1.What is eMPOWER?<br></strong>
+
+eMPOWER is an aspirational reward program for mechanics. The program is aimed to
+
+enrich and facilitate your growth, while further eMPOWERing your existing relationships
+
+and overall prosperity.
+<br>
+<br>
+
+<strong>2.Who can participate in eMPOWER?</strong>
+<br>
+All mechanics for Mahindra Automotives, Tractors and both are eligible to be part of
+
+eMPOWER
+<br>
+<br>
+
+<strong>3.What are the benefits of eMPOWER?</strong><br>
+Since eMPOWER is an aspirational program, you can avail lot of benefits. Some key
+
+benefits are-
+
+<ul>
+<li>Exclusive benefits for your loyalty to Mahindra Genuine Spare Parts
+
+		- Workshop Upgradation<br>
+
+		- Mahindra branding for your workshop<br>
+
+		- Special tools<br>
+
+		- Training and Certifications<br>
+
+- Mahindra plant visits and much more<br></li><li>
+
+ Loyalty Genuine Points(GP) on more than 1,00,000 + partlines of Mahindra Genuine Spare Parts<br></li><li>
+
+ Earn bonus gifts on higher slabs<br></li><li>
+
+ Clear, transparent and simple processes with quick access to your account information<br><br></li></ul>
+
+<strong>4.How can I enroll myself to eMPOWER</strong><br>
+
+There are multiple ways to enroll yourself for the program.<br><br>
+
+1 You can show your interest by leaving your mobile number on our
+
+website<br>
+
+<ul>
+<li>
+a. Login to the website <br>eMPOWER.mahindraespares.com and click on \"Request for Registration\" link.<br></li><li>
+
+b.Enter your name, mobile number and click on submit<br></li><li>
+
+c.Our representative will approach you and seek further information he
+
+will help you with the enrollment process for eMPOWER. <br></li></ul>
+
+2 You can also directly call on our toll free helpline 8422917660 and request
+
+operator to enroll. The representative will ask for details like name, mobile number
+
+and address. Please share those details. Then Mahindra representative will contact
+
+and help you with enrollment for eMPOWER.<br><br>
+
+3 Contact nearest Mahindra spares retailer or distributor. Please mention
+
+them that you wish to register for eMPOWER and provide your name and mobile
+
+number. Then Mahindra representative will contact you and help you with
+
+enrollment for eMPOWER.<br><br>
+
+<strong>5.Do I need to submit any documents for enrollment?</strong><br>
+
+- When our Mahindra representative will approach you, please fill the form
+
+and share following documents- Passport size photograph, photo copy of any one
+
+identity proof (Aadhar Card, Driving Licence, Pan Card, Voter ID, Passport) and
+
+address proof(Aadhaar Card, Telephone -landline or post paid mobile bill, Passport,
+
+Current and Valid Ration Card, Electricity Bill in self name).<br><br>
+
+<strong>6.How will I know if I am enrolled for eMPOWER or not?</strong><br>
+
+- Once your documents are submitted and verified, you will get SMS on your
+
+registered mobile number. The SMS will have your login ID and password. Please
+
+remember or note your password and keep it safe. You would need your password
+
+to log-in to website.<br>
+
+- Also you can call our toll free helpline 8422917660 and ask for the status
+
+of your enrollment. You will have to provide your registered mobile number to
+
+check the status of your enrollment.
+<br>
+You can go to <br> eMPOWER.mahindraespares.com and login with your login details.
+<br><br>
+Still have questions, please visit the website eMPOWER.mahindraespares.com or call us on
+
+8422917660
+]]></string>
+
+    <string name="contact_us">
+        <![CDATA[ <br>Interested in our eMPOWER program?</br>
+<br><br>Please contact our toll free Helpline number 8422917660 during 9.00AM to 6.00PM Monday - Saturday (except on Public Holidays)</br></br>
+
+<br><br>Or you can contact your nearest distributor</br></br>
+
+<br><br><b>Registered Office:</b></br>
+<br>Mahindra & Mahindra Limited</br>
+<br>Gateway Building,</br>
+<br>Apollo Bunder,</br>
+<br>Mumbai - 400 001.India.</br></br>
+
+<br><br><b>Head Office:</b></br>
+<br>Spares Business Unit</br>
+<br>Mahindra & Mahindra Limited.</br>
+<br>3rd Floor, EPU Building,</br>
+<br>FES, Gate No. 4</br>
+<br>Akurli Road, Kandivali East,</br>
+<br>Mumbai - 400 101, Maharashtra, India </br></br> ]]>  </string>
+
+    <string name="terms_condition"><![CDATA[
+<br><b>1.1</b> Promoter: The promoter is Mahindra & Mahindra Ltd. hereinafter referred to as \"Mahindra\" or the \"Promoter\".</br>
+
+<br><b>1.2</b> The eMPOWER Loyalty Program is open to eligible Participants only limited to the territory of India as defined in 1.3 below.</br>
+
+<br><b>1.3</b> An eligible Participant can be a mechanic enrolled by Business Associates of the Promoter</br>
+
+<br><b>1.4</b> The reference to \"you\" means the Participant as defined in the Terms and Conditions. The reference to \"we\" or \"us\" means both Mahindra and Grass Roots India jointly unless the context otherwise requires or if only one of the above two parties is referred to in a particular clause. Capitalized terms used therein but not defined will have the meaning ascribed to them under the Terms and Conditions.</br>
+
+<br><b>1.5</b> Merely participating in the eMPOWER Program shall not entitle you, the Customer (\"Participant\") for any benefits and/ or rewards and/ or payments (\"Rewards\") under the eMPOWER Program which shall at all times be subject to the Terms and Conditions.</br>
+
+<br><b>1.6</b> Mahindra or Grass Roots India will not pass Participants\' personal details to any other organization without their due permission to the extent permissible by law.</br>
+
+<br><b>1.7</b> Reporting and payment of all applicable taxes, fees, and/or surcharges in relation to the Rewards and / or Assured Gifts shall be the sole responsibility of the Participant.</br>
+
+<br><b>1.8</b> Mahindra reserves the right to conduct checks of such kind and in such manner as it may deem fit on the Participant\'s identity from time to time and the Participant hereby gives its consent for the same.</br>
+
+<br><b>1.9</b> Mahindra may modify/change these Terms and Conditions at its sole discretion any time without any notice of any nature whatsoever to any person.</br>
+
+<br><b>1.10</b> Mahindra, Dealers, Distributors, Retailers, consultants, contractors, advertising agencies providing services to Mahindra and their respective employees, public relations agencies providing services to Mahindra and their respective employees, marketing agencies providing services to Mahindra and their respective employees; and their immediate families (parent, child, siblings & spouse) are not eligible to participate in the eMPOWER Program. Mahindra. reserves the right to withdraw the Initiative at any time without prior notice of any nature whatsoever to any person.</br>
+
+<br><b>1.11</b> The information submitted is the sole responsibility of the Participant and any Participant who provides any illicit or illegal information of any nature whatsoever shall be liable for all consequences relating thereto, including without limitation all penalties prescribed under applicable laws. Mahindra and Grass Roots India disclaim all liability and responsibility in this regard.</br>
+
+<br><b>1.12</b> By participating in the Initiative, Participants agree to release, discharge and hold harmless Mahindra and Grass Roots India and all associated and affiliated companies, officers, directors, employees and agents from any and all damages, costs, expenses, and other liabilities, including damages for personal injury or damage to property, whether the damages are direct or indirect, and regardless of whether the claim is based on contract, tort or any other legal theory, which may be due to or arise out of participation in the Initiative or the acceptance, use/misuse or possession of the Rewards.</br>
+
+<br><b>1.13</b> The Participant undertakes to indemnify Mahindra and Grass Roots India against any loss, damage, claims, costs, expenses which may be incurred or suffered by Mahindra and / or Grass Roots India due to breach of these Terms and Conditions.</br>
+
+<br><b>1.14</b> Mahindra reserves the right to provide alternate gifts/ services/ vouchers of equivalent value in place of the Rewards. Mahindra gives no warranty/guarantee whatsoever about the nature, functioning or quality of the gifts/ services/ vouchers. Any warranties and guarantees on such gifts/ services/ vouchers shall be as offered, if any, by the respective manufacturers/suppliers/service providers.</br>
+
+<br><b>1.15</b> Participant shall not by itself or with others participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of products of Mahindra or any of its affiliate companies or other practices, which may be detrimental to products or Mahindra.</br>
+
+<br><b>1.16</b> Mahindra reserves the right to terminate the eMPOWER Program or withdraw the Rewards earned by a Participant in the event of an improper sale by the participant in violation of the local law or when Mahindra has reason to believe that the Participant has breached any of the Terms and Conditions contained here.</br>
+
+<br><b>1.17</b> The Initiative is subject to Indian laws. All disputes in respect of the Initiative including without limitation the Terms and Conditions contained herein are subject to jurisdiction of the courts at Mumbai only.<br/>
+
+<br><b>1.18</b> Participants should note that Mahindra has made Tajonline (India) Private Limited (trading as Grass Roots India and herein referred to as \"Grass Roots India\" a provider of incentive and reward administration services) responsible for devising, implementing, administering, overseeing and operating the Program. Participants should initially contact/deal with Grass Roots India in respect of any queries/issues related to the eMPOWER Program. Only those queries/issues that cannot be satisfactorily resolved by Grass Roots India will be escalated to Mahindra for its decision.</br>
+
+<br><b>1.19</b> We may contact you on email and/or SMS and/or call you regarding the program. By accepting these Terms and Conditions, you are authorizing us to contact you. Your consent indemnifies us from any liability arising out of the regulations like Telecom Do Not Disturb. We will take due care as possible to respect your privacy and personal time. In case your mobile number is registered under the National Do Not Disturb registry, you may not be able to receive any promotional communication we send across.</br> ]]></string>
+
+
+    <string name="free_bonus_product">Free Bonus Products</string>
+    <string name="crop__saving">Saving picture…</string>
+    <string name="crop__wait">Please wait…</string>
+    <string name="crop__pick_error">No image sources available</string>
+
+    <string name="crop__done">DONE</string>
+    <string name="crop__cancel" tools:ignore="ButtonCase">CANCEL</string>
+
+    <string name="mechanic_registration">DEALER REGISTRATION</string>
+    <string name="search_mechanic">SEARCH FOR DEALER</string>
+    <string name="btn_back">BACK</string>
+    <string name="window_cannot_open">Sorry , currently the redemption window is not open. Redemption window will be open from 21st April 2017 till 30th June 2017.Only points accumulated up till March 2017 can be redeemed in this period.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <!-- TODO: New Dashboard menu -->
+    <string name="menu_view_profile">View Profile</string>
+    <string name="menu_view_transaction">View Transactions</string>
+    <string name="menu_view_reward">View Rewards</string>
+    <string name="menu_whats_new">What\'s New</string>
+    <string name="menu_scheme_letter">Scheme Letter</string>
+    <string name="menu_target_meter">Target Meter</string>
+    <string name="menu_change_pass">Change Password</string>
+    <string name="menu_help_new">Help</string>
+    <string name="menu_edit_regi">Edit Registration</string>
+    <string name="menu_member_search">Member Search</string>
+    <string name="menu_app_demo">App Demo</string>
+    <string name="Appdemo">Select your preferred language to view the App demo</string>
+    <string name="txt_transchistory">Transaction History</string>
+
+    <string name="total_earned_points">Total Earned Points</string>
+    <string name="total_redeemed_points">Total Redeemed Points</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="delivery_date_and_time">Delivery Date &amp; Time:</string>
+    <string name="recipient_name">Recipient Name:</string>
+    <string name="call_toll_free_number">Call Toll-Free Number</string>
+    <string name="menu_points_calculator">Points Calculator</string>
+    <string name="campaign_rewards">Campaign Rewards</string>
+    <string name="royale_benefit">Royale Benefit</string>
+    <string name="tally_invoice_upload">Tally Invoice Upload</string>
+
+
+    <string name="clik_here"><u>Click Here</u></string>
+    <string name="tc"><u>Terms &amp; Conditions</u></string>
+    <string name="product_code">Product Code : </string>
+    <string name="product_name">Product Name : </string>
+    <string name="points">Points : </string>
+    <string name="description">Description</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_your_digital_reward">Your Digital Rewards</string>
+    <string name="title_activity_royality_main">RoyalityMainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="invoice_upload_t_and_c">
+        1) This campaign is applicable only for all Active Unnati Retailers of Gulf Oil.\n\n
+2) Gulf Oil Lubricants India Limited (GOLIL) reserves the right to revise the policy.\n\n
+3) GOLIL will have all the right approving and disapproving the invoices uploaded.\n\n
+4) Retailers to upload Oct and Nov invoices only.\n\n
+5) Retailers having less than 3 invoices can upload all available invoices and Retailers having more than 3 invoices, need to upload atleast 3 invoices.\n\n
+6) Ensure that the invoice submitted is original Gulf Tally Invoice, readable and submitted within the campaign period.\n\n
+7) Post submission of Gulf Tally Invoices GOLIL team will verify the details and approve or reject based on the parameters of the campaign.\n\n
+8) On approval of the uploaded invoices, Paytm credits worth Rs. 200/- will be rewarded post campaign closure.\n\n
+9) Campaign valid from 9th to 24th December 2019.</string>
+
+    <string name="view_details"><u>View Details</u></string>
+
+    <string name="ipl_offer">IPL Offer</string>
+    <string name="ipl_terms_1">1) This offer is applicable to Active Gulf Unnati retailers only.</string>
+    <string name="ipl_terms_2">2) Each Participant can win max 3 vouchers through this campaign.</string>
+    <string name="ipl_terms_3">3) Images submitted by retailers can be used for promotions by Gulf Oil.</string>
+    <string name="ipl_terms_4">4) The company reserves the right to revise or withdraw the campaign without any prior notice.</string>
+    <string name="ipl_terms_5">5) Rewards will be provide at the end of the campaign.</string>
+    <string name="ipl_offfer_text">We are pleased to bring Gulf ka Call: Be a CSK Fan Offer. On every CSK match day, click a photo of yourself or your family wearing CSK Merchandise &amp; holding a Gulf Oil Pack. You can also click a photo of you &amp; your family watching CSK match on TV. Upload the photo on Gulf Unnati app &amp; 25 lucky winners stand a chance to win Rs. 1000/- Amazon voucher. in addition few lucky winners will be invited for an exclusive virtual meet and greet with the CSK team.</string>
+    <string name="str_login_title">LOGIN TO YOUR ACCOUNT</string>
+    <string name="edt_enter_your_username_hint">Enter your username</string>
+    <string name="str_forgot_title">FORGOT PASSWORD</string>
+    <string name="btn_submit">Submit</string>
+    <string name="str_terms_n_condition_title">TERMS AND CONDITIONS</string>
+    <string name="btn_go_to_login">Go to Login Page</string>
+    <string name="str_ok">Ok</string>
+    <string name="str_confirmation">Confirmation</string>
+    <string name="str_app_exit_msg">Are you sure you want to exit?</string>
+    <string name="str_yes">Yes</string>
+    <string name="str_no">No</string>
+    <string name="str_error">Error</string>
+    <string name="str_success">Success</string>
+    <string name="title_activity_main_dashboard">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_more">More</string>
+    <string name="title_account">Account</string>
+    <string name="str_redeem_rewards">Redeem Rewards</string>
+    <string name="str_internet_disconnected">Internet Disconnected...!!</string>
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="str_view_more">View More</string>
+    <string name="str_logout_msg">Are you sure you want to exit?</string>
+    <string name="str_rewards">Rewards</string>
+    <string name="str_order_history">Order History</string>
+    <string name="str_category">Category</string>
+    <string name="str_view_details">View Details</string>
+    <string name="str_description">Description</string>
+    <string name="str_place_order">Place Order</string>
+    <string name="str_order_details">Order Details</string>
+    <string name="str_resend_new_code">Resend New Code</string>
+    <string name="str_cance_order_confirmation_msg">Are you sure you want to cancel this order?</string>
+    <string name="title_activity_your_digital_rewards">YourDigitalRewardsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_your_digital_rewards_acitivity">YourDigitalRewardsAcitivity
+    </string>
+    <string name="str_your_digital_rewards">Your Digital Rewards</string>
+    <string name="str_view_code">View Code</string>
+    <string name="str_how_to_use">How To Use</string>
+    <string name="str_milestone_journey">Milestone Journey</string>
+    <string name="str_pending_orders">Pending Orders</string>
+    <string name="str_point_calcuator">Points Calculator</string>
+    <string name="edt_new_password_hint">New Password</string>
+    <string name="edt_re_enter_new_password_hint">Re-Enter New Password</string>
+    <string name="str_change_password">Change Password</string>
+    <string name="str_my_points">My Points</string>
+    <string name="str_update">Update</string>
+    <string name="str_no_thanks">No Thanks</string>
+    <string name="str_data_not_found">Data not found.</string>
+    <string name="str_magic_bonanza">Magic Bonanza</string>
+    <string name="str_unnati_connect">Unnati Connect</string>
+    <string name="str_help">Help</string>
+    <string name="edt_uin_hint">UIN</string>
+    <string name="edt_retailer_code_hint">Retailer Code</string>
+    <string name="edt_shop_name_hint">Shop Name</string>
+    <string name="edt_full_name_hint">Full Name</string>
+    <string name="edt_pan_card_no_hint">Pan Card No</string>
+    <string name="edt_mobile_no_hint">Mobile No</string>
+    <string name="edt_pan_card_img_hint">Pan Card Image</string>
+    <string name="edt_bank_name_hint">Bank Name</string>
+    <string name="edt_bank_type_hint">Bank Type</string>
+    <string name="edt_account_holder_name_hint">Account Holder Name</string>
+    <string name="edt_account_number_hint">Account Number</string>
+    <string name="edt_ifsc_code_hint">IFSC Code</string>
+    <string name="edt_branch_name_hint">Branch Name</string>
+    <string name="edt_cancelled_cheque_img_hint">Cancelled Cheque Image</string>
+    <string name="str_update_profile">Update Profile</string>
+    <string name="str_otp_verify_profile">"Profile OTP Verification "</string>
+    <string name="str_otp_verify_pan">"PAN OTP Verification "</string>
+    <string name="str_knowledge_corner">Knowledge Corner</string>
+    <string name="edt_other_bank_name_hint">Other Bank Name</string>
+    <string name="str_notification">Notification</string>
+    <string name="str_notification_detail">Notification Detail</string>
+    <string name="str_leaderboard">Leaderboard</string>
+    <string name="str_rank">Rank</string>
+    <string name="str_Enter_by_mobile_number">Enter Mobile Number</string>
+    <string name="str_search_by_mobile_number">Search by Mobile Number</string>
+    <string name="str_Enter_by_retailer_tally_id">Enter Retailer Tally Id</string>
+    <string name="str_search_by_retailer_tally_id">Search by Retailer Tally Id</string>
+    <string name="str_Enter_by_retailer_uid">Enter Retailer UID</string>
+    <string name="str_search_by_retailer_uid">Search by Retailer UID</string>
+    <string name="str_my_retailers">My Retailers</string>
+    <string name="edt_pan_card_name">Pan Card Name</string>
+    <string name="str_my_tds_certificate">My TDS Certificate</string>
+</resources>
