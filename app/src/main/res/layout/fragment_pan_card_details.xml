@@ -96,98 +96,6 @@
                         android:orientation="vertical">
 
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvPanCardNameLable"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="@dimen/padding_16dp"
-                                android:text="@string/edt_pan_card_name" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@id/tvPanCardNameLable"
-                                android:text="*"
-                                android:textColor="@color/Red" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/tilPanCardName"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/tvPanCardNameLable"
-                                app:boxCornerRadiusBottomEnd="25dp"
-                                app:boxCornerRadiusBottomStart="25dp"
-                                app:boxCornerRadiusTopEnd="25dp"
-                                app:boxCornerRadiusTopStart="25dp"
-                                app:boxStrokeErrorColor="@color/error"
-                                app:errorTextColor="@color/error">
-                                <!--this is the actual edit text which takes the input-->
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/edtPanCardName"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/height_48dp"
-                                    android:inputType="textCapCharacters"
-                                    android:maxLines="1"
-                                    android:padding="@dimen/tiet_padding_6dp"
-                                    android:textSize="@dimen/tiet_text_size_16sp" />
-
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvPanCardNoLable"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="@dimen/padding_16dp"
-                                android:text="@string/edt_pan_card_no_hint" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@id/tvPanCardNoLable"
-                                android:text="*"
-                                android:textColor="@color/Red" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/tilPanCardNo"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/tvPanCardNoLable"
-                                app:boxCornerRadiusBottomEnd="25dp"
-                                app:boxCornerRadiusBottomStart="25dp"
-                                app:boxCornerRadiusTopEnd="25dp"
-                                app:boxCornerRadiusTopStart="25dp"
-                                app:boxStrokeErrorColor="@color/error"
-                                app:errorTextColor="@color/error">
-                                <!--this is the actual edit text which takes the input-->
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/edtPanCardNoCode"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/height_48dp"
-                                    android:inputType="textCapCharacters"
-                                    android:maxLines="1"
-                                    android:padding="@dimen/tiet_padding_6dp"
-                                    android:textSize="@dimen/tiet_text_size_16sp" />
-
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </RelativeLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -235,6 +143,7 @@
                                         android:maxLines="1"
                                         android:padding="@dimen/tiet_padding_6dp"
                                         android:singleLine="true"
+                                        android:enabled="false"
                                         android:textSize="@dimen/tiet_text_size_16sp" />
 
                                 </com.google.android.material.textfield.TextInputLayout>
@@ -254,10 +163,107 @@
                             android:id="@+id/tvViewPanCardCopy"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_16dp"
+                            android:layout_marginTop="@dimen/margin_8dp"
                             android:paddingLeft="@dimen/padding_16dp"
-                            android:text="View Pan Card Copy"
+                                android:text="View Pan Card Copy"
                             android:textColor="@color/hyperlink" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="@dimen/margin_10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPanCardNameLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_pan_card_name" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvPanCardNameLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilPanCardName"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvPanCardNameLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtPanCardName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:enabled="false"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPanCardNoLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_pan_card_no_hint" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvPanCardNoLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilPanCardNo"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvPanCardNoLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtPanCardNoCode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:enabled="false"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+
 
                     </LinearLayout>
 

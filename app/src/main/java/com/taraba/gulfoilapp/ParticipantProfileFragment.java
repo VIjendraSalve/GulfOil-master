@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ import com.taraba.gulfoilapp.constant.UserType;
 import com.taraba.gulfoilapp.dialog.GulfUnnatiDialog;
 import com.taraba.gulfoilapp.dialog.ImageSelectionOptionDialog;
 import com.taraba.gulfoilapp.model.BankMasterResponse;
+import com.taraba.gulfoilapp.model.GetPanDetailsResponse;
 import com.taraba.gulfoilapp.model.ParticipantProfileRequest;
 import com.taraba.gulfoilapp.model.ParticipantProfileResponse;
 import com.taraba.gulfoilapp.model.UpdateParticipantProfileResponse;
@@ -229,6 +231,19 @@ public class ParticipantProfileFragment extends Fragment
         spnBankName = view.findViewById(R.id.spnBankName);
         spnBankName.setOnItemSelectedListener(this);
         spnBankType = view.findViewById(R.id.spnBankType);
+
+        spnBankType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               // ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         tvErrorBankName = view.findViewById(R.id.tvErrorBankName);
         tvErrorBankType = view.findViewById(R.id.tvErrorBankType);
 
@@ -292,7 +307,9 @@ public class ParticipantProfileFragment extends Fragment
                 break;
             case PAN_CARD_IMG_REQUEST_CODE:
                 panCardImgLocalPath = output;
+
                 edtPanImage.setText(FileUtils.getFileNameFromURL(output));
+                callGetPanDetails();
                 break;
             case CANCELLED_CHEQUE_CARD_IMG_REQUEST_CODE:
                 cancelledChequeImgLocalPath = output;
@@ -350,7 +367,7 @@ public class ParticipantProfileFragment extends Fragment
             getBankMasterDataAPI();
             setProfileData();
         } else {
-            new GulfUnnatiDialog(getActivity())
+            new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
                     .setTitle(getString(R.string.str_error))
                     .hideDialogCloseButton(true)
                     .setDescription(response.getError())
@@ -388,9 +405,12 @@ public class ParticipantProfileFragment extends Fragment
                 tilPanImage.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
                 tilPanCardName.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
             }else {
-                tilPanCardNo.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
-                tilPanImage.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
-                tilPanCardName.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
+                edtPanCardNoCode.setEnabled(false);
+                edtPanCardName.setEnabled(false);
+                edtPanImage.setEnabled(false);
+                tilPanCardNo.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
+                tilPanImage.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
+                tilPanCardName.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
             }
 
             strBankReason = "";
@@ -417,6 +437,45 @@ public class ParticipantProfileFragment extends Fragment
                 edtBranchName.setEnabled(false);
                 edtCancelledChequeImage.setEnabled(false);
                 btnChooseCancelCheque.setEnabled(false);
+
+
+                tilAccountHolderName.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
+                tilAccountNumber.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
+                tilBranchName.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
+                tilCancelledChequeImage.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
+                tilIFSCCode.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.menu_disable_grey));
+                spnBankName.setBackground(getActivity().getResources().getDrawable(R.drawable.edittext_spinner_bg_new));
+                spnBankType.setBackground(getActivity().getResources().getDrawable(R.drawable.edittext_spinner_bg_new));
+
+                edtAccountHolderName.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtAccountNumber.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtIFSCCode.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtBranchName.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtCancelledChequeImage.setTextColor(getActivity().getResources().getColor(R.color.black));
+
+            }else {
+                spnBankName.setEnabled(true);
+                spnBankType.setEnabled(true);
+                edtAccountHolderName.setEnabled(true);
+                edtAccountNumber.setEnabled(true);
+                edtIFSCCode.setEnabled(true);
+                edtBranchName.setEnabled(true);
+                edtCancelledChequeImage.setEnabled(true);
+                btnChooseCancelCheque.setEnabled(true);
+
+                tilAccountHolderName.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
+                tilAccountNumber.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
+                tilBranchName.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
+                tilCancelledChequeImage.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
+                tilIFSCCode.setBoxBackgroundColor(getActivity().getResources().getColor(R.color.white));
+                spnBankName.setBackground(getActivity().getResources().getDrawable(R.drawable.edittext_spinner_bg));
+                spnBankType.setBackground(getActivity().getResources().getDrawable(R.drawable.edittext_spinner_bg));
+
+                edtAccountHolderName.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtAccountNumber.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtIFSCCode.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtBranchName.setTextColor(getActivity().getResources().getColor(R.color.black));
+                edtCancelledChequeImage.setTextColor(getActivity().getResources().getColor(R.color.black));
             }
 
             if (!data.getPan_detail().getPan_status().equals("")) {
@@ -553,7 +612,7 @@ public class ParticipantProfileFragment extends Fragment
             bankMasterData = response;
             setBankSpinners();
         } else {
-            new GulfUnnatiDialog(getActivity())
+            new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
                     .setTitle(getString(R.string.str_error))
                     .hideDialogCloseButton(true)
                     .setDescription(response.getError())
@@ -579,6 +638,15 @@ public class ParticipantProfileFragment extends Fragment
                 } else {
                     llBasicDetailsForm.setVisibility(View.VISIBLE);
                     ivBasicDetailsDropDown.animate().rotationX(0).setDuration(800).start();
+
+                    //new code
+                    ivBankDetailsDropDown.animate().rotationX(180).setDuration(800).start();
+                    llBankDetailsForm.setVisibility(GONE);
+
+                    ll_pan_data.setVisibility(View.GONE);
+                    ivPanDetailsDropDown.animate().rotationX(180).setDuration(800).start();
+
+
                 }
                 break;
             case R.id.ivProfileImage:
@@ -609,6 +677,15 @@ public class ParticipantProfileFragment extends Fragment
                 } else {
                     llBankDetailsForm.setVisibility(View.VISIBLE);
                     ivBankDetailsDropDown.animate().rotationX(0).setDuration(800).start();
+
+                    // new code
+                    ivBasicDetailsDropDown.animate().rotationX(180).setDuration(800).start();
+                    llBasicDetailsForm.setVisibility(GONE);
+
+                    ll_pan_data.setVisibility(View.GONE);
+                    ivPanDetailsDropDown.animate().rotationX(180).setDuration(800).start();
+
+
                 }
                 break;
             case R.id.btnChooseCancelCheque:
@@ -647,6 +724,15 @@ public class ParticipantProfileFragment extends Fragment
                 } else {
                     ll_pan_data.setVisibility(View.VISIBLE);
                     ivPanDetailsDropDown.animate().rotationX(180).setDuration(800).start();
+
+
+                    // new code
+
+                    llBankDetailsForm.setVisibility(GONE);
+                    ivBankDetailsDropDown.animate().rotationX(180).setDuration(800).start();
+
+                    ivBasicDetailsDropDown.animate().rotationX(180).setDuration(800).start();
+                    llBasicDetailsForm.setVisibility(GONE);
                 }
 
                 break;
@@ -819,7 +905,7 @@ public class ParticipantProfileFragment extends Fragment
     private void updateParticipantProfileResponse(UpdateParticipantProfileResponse updateParticipantProfileResponse) {
         progressDialog.dismiss();
         if (ServiceBuilder.isSuccess(updateParticipantProfileResponse.getStatus())) {
-            new GulfUnnatiDialog(getActivity())
+            new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
                     .setTitle(getString(R.string.str_success))
                     .hideDialogCloseButton(true)
                     .setDescription(updateParticipantProfileResponse.getMessage())
@@ -830,7 +916,7 @@ public class ParticipantProfileFragment extends Fragment
                     .show();
 
         } else {
-            new GulfUnnatiDialog(getActivity())
+            new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
                     .setTitle(getString(R.string.str_error))
                     .hideDialogCloseButton(true)
                     .setDescription(updateParticipantProfileResponse.getError())
@@ -843,7 +929,7 @@ public class ParticipantProfileFragment extends Fragment
 
     private void updateParticipantProfileError(Throwable throwable) {
         progressDialog.dismiss();
-        new GulfUnnatiDialog(getActivity())
+        new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
                 .setTitle(getString(R.string.str_error))
                 .hideDialogCloseButton(true)
                 .setDescription(getString(R.string.something_went_wrong))
@@ -867,6 +953,7 @@ public class ParticipantProfileFragment extends Fragment
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+      //  ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
         if (ViewUtils.getText(spnBankName).equals("Other")) {
             Toast.makeText(getActivity(), "Other", Toast.LENGTH_SHORT).show();
             rl_other_bank_name.setVisibility(View.VISIBLE);
@@ -880,4 +967,78 @@ public class ParticipantProfileFragment extends Fragment
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
+    private void callGetPanDetails() {
+        Map<String, RequestBody> partMap1 = new HashMap<>();
+        MultipartBody.Part panCardImg = null;
+
+        if (ConnectionDetector.isNetworkAvailable(getActivity())) {
+            progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setMessage("Please  wait !!!");
+            progressDialog.setIndeterminate(true);
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+
+
+            partMap1.put("participant_id", RetrofitUtils.createPartFromString(userPref.getString("usertrno", "")));
+            partMap1.put("image_type", RetrofitUtils.createPartFromString("pan"));
+
+
+                partMap1.put("pan_image", RetrofitUtils.createPartFromString(ViewUtils.getText(edtPanCardNoCode)));
+                panCardImg = TextUtils.isEmpty(panCardImgLocalPath) ? null : RetrofitUtils.prepareFilePart("pan_image", panCardImgLocalPath);
+
+
+
+            disposable = ServiceBuilder.getRetrofit()
+                    .create(GulfService.class)
+                    .getPanDetails(partMap1,  panCardImg)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(this::getPanDetailsResponse, this::updateParticipantProfileError1);
+        } else {
+            Toast.makeText(getActivity(), getString(R.string.internet_connection_error), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void getPanDetailsResponse(GetPanDetailsResponse getPanDetailsResponse) {
+        progressDialog.dismiss();
+        if (ServiceBuilder.isSuccess(getPanDetailsResponse.getStatus())) {
+            new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
+                    .setTitle(getString(R.string.str_success))
+                    .hideDialogCloseButton(true)
+                    .setDescription(getPanDetailsResponse.getMessage())
+                    .setPosButtonText(getString(R.string.str_ok), dialog -> {
+                        dialog.dismiss();
+                        edtPanCardName.setText(getPanDetailsResponse.getPan_name());
+                        edtPanCardNoCode.setText(getPanDetailsResponse.getPan_number());
+                    })
+                    .show();
+
+        } else {
+            new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
+                    .setTitle(getString(R.string.str_error))
+                    .hideDialogCloseButton(true)
+                    .setDescription(getPanDetailsResponse.getError())
+                    .setPosButtonText(getString(R.string.str_ok), dialog -> {
+                        dialog.dismiss();
+                        edtPanCardName.setText("");
+                        edtPanCardNoCode.setText("");
+                    })
+                    .show();
+        }
+    }
+
+    private void updateParticipantProfileError1(Throwable throwable) {
+        progressDialog.dismiss();
+        new GulfUnnatiDialog(getActivity(), new GulfOilUtils().getUserType())
+                .setTitle(getString(R.string.str_error))
+                .hideDialogCloseButton(true)
+                .setDescription(getString(R.string.something_went_wrong))
+                .setPosButtonText(getString(R.string.str_ok), dialog -> {
+                    dialog.dismiss();
+                })
+                .show();
+    }
+
 }

@@ -24,6 +24,7 @@
 
     <dimen name="appdemo_width">140.0dip</dimen>
     <dimen name="appdemo_height">45dp</dimen>
+    <dimen name="actionBarSize">10dp</dimen>
 
 
 </resources>

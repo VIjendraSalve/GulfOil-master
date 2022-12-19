@@ -51,6 +51,7 @@ public class CameraHelper extends AppCompatActivity {
     private String imagePath = "NONE";
     private int img_no = 0;
     private boolean requiredCompression;
+    String extension = "";
 
 
     public CameraHelper(AppCompatActivity acivity) {
@@ -116,8 +117,16 @@ public class CameraHelper extends AppCompatActivity {
 
     private void galleryIntent() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+       // Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+       // intent.setType("image/jpeg");
         intent.setType("image/*");
+
+        /*String[] mimeTypes = {"image/jpeg", "image/png", "image/jpg"};
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+                .setType("image/*")
+                .putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);*/
         activity.startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_GALERY);
+
     }
 
     private void cameraIntent() {
@@ -192,6 +201,7 @@ public class CameraHelper extends AppCompatActivity {
         if (data != null) {
             try {
                 Log.d("location_gal", "loc" + data.getDataString());
+
                 new ImageCompressionAsyncTask(true).execute(data.getDataString());
 
                 //bm = MediaStore.Images.Media.getBitmap(activity.getApplicationContext().getContentResolver(), data.getData());
@@ -206,12 +216,14 @@ public class CameraHelper extends AppCompatActivity {
 
     private String getRealPathFromURI(String contentURI) {
         Uri contentUri = Uri.parse(contentURI);
-        Cursor cursor = activity.getContentResolver().query(contentUri, null, null, null, null);
+        String[] filePathColumn = { MediaStore.Images.Media.DATA };
+        Cursor cursor = activity.getContentResolver().query(contentUri, filePathColumn, null, null, null);
+        Log.d("Vijendra", "getRealPathFromURI: "+cursor.toString());
         if (cursor == null) {
             return contentUri.getPath();
         } else {
             cursor.moveToFirst();
-            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            int idx = cursor.getColumnIndex(filePathColumn[0]);
             return cursor.getString(idx);
         }
     }
@@ -236,6 +248,7 @@ public class CameraHelper extends AppCompatActivity {
         public String compressImage(String imageUri) {
 
             String filePath = getRealPathFromURI(imageUri);
+            extension = filePath.substring(filePath.lastIndexOf("."));
             Bitmap scaledBitmap = null;
 
             BitmapFactory.Options options = new BitmapFactory.Options();
@@ -325,7 +338,8 @@ public class CameraHelper extends AppCompatActivity {
             String filename = getFilename();
             try {
                 out = new FileOutputStream(filename);
-                scaledBitmap.compress(Bitmap.CompressFormat.JPEG, requiredCompression ? 10 : 80, out);
+                scaledBitmap.compress(Bitmap.CompressFormat.JPEG, requiredCompression ? 20 : 80, out);
+                //scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80, out);
 
 
             } catch (FileNotFoundException e) {
@@ -343,7 +357,9 @@ public class CameraHelper extends AppCompatActivity {
             if (!file.exists()) {
                 file.mkdirs();
             }
-            String uriSting = (file.getAbsolutePath() + "/" + System.currentTimeMillis() + ".jpg");
+
+            //String uriSting = (file.getAbsolutePath() + "/" + System.currentTimeMillis() + ".jpg");
+            String uriSting = (file.getAbsolutePath() + "/" + System.currentTimeMillis() + extension);
             return uriSting;
         }
 
@@ -360,7 +376,6 @@ public class CameraHelper extends AppCompatActivity {
                     Bitmap bitmap = utils.decodeBitmapFromPath(result);
                     imageView.setImageBitmap(bitmap);
                 }
-
                 delegate.processFinish(result, img_no);
             } else {
 

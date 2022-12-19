@@ -82,6 +82,9 @@
         <item>Qty:3</item>
         <item>Qty:4</item>
         <item>Qty:5</item>
+        <item>Qty:6</item>
+        <item>Qty:7</item>
+        <item>Qty:8</item>
     </array>
 
     <array name="spinner_quater">
@@ -827,4 +830,5 @@ Still have questions, please visit the website eMPOWER.mahindraespares.com or ca
     <string name="str_my_retailers">My Retailers</string>
     <string name="edt_pan_card_name">Pan Card Name</string>
     <string name="str_my_tds_certificate">My TDS Certificate</string>
+    <string name="maximagesize"><i>Maximum size allowed 4mb</i></string>
 </resources>

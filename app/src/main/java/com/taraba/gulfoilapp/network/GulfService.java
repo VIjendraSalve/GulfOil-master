@@ -8,6 +8,7 @@ import com.taraba.gulfoilapp.model.BankMasterResponse;
 import com.taraba.gulfoilapp.model.DashboardDataRequest;
 import com.taraba.gulfoilapp.model.DashboardDataResponse;
 import com.taraba.gulfoilapp.model.FLSProfileUpdateResponse;
+import com.taraba.gulfoilapp.model.GetPanDetailsResponse;
 import com.taraba.gulfoilapp.model.GetRetailerProfileDetailsRequest;
 import com.taraba.gulfoilapp.model.GetRetailerProfileDetailsResponse;
 import com.taraba.gulfoilapp.model.HelpRequest;
@@ -134,6 +135,13 @@ public interface GulfService {
             @Part MultipartBody.Part panCardImg,
             @Part MultipartBody.Part profileImg,
             @Part MultipartBody.Part cancelChequeImg
+    );
+
+    @Multipart
+    @POST("verify_image")
+    Observable<GetPanDetailsResponse> getPanDetails(
+            @PartMap() Map<String, RequestBody> partMap,
+            @Part MultipartBody.Part panCardImg
     );
 
     @Multipart

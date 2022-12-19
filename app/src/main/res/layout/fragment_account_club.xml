@@ -54,6 +54,7 @@
                             tools:src="@drawable/ic_default_user_avatar" />
 
                         </LinearLayout>
+
                         <TextView
                             android:id="@+id/tvUserName"
                             android:layout_width="match_parent"

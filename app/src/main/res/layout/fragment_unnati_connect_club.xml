@@ -19,7 +19,7 @@
         android:id="@+id/viewpagertab"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="?actionBarSize"
+        android:layout_marginTop="@dimen/actionBarSize"
         android:background="@color/club_text_background_stroke"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

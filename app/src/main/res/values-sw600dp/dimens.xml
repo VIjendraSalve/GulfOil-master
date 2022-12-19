@@ -9,4 +9,5 @@
     <dimen name="text_size_16sp">22sp</dimen>
     <dimen name="text_size_14sp">18sp</dimen>
     <dimen name="padding_24dp">24dp</dimen>
+    <dimen name="actionBarSize">10dp</dimen>
 </resources>

@@ -21,8 +21,8 @@ android {
         applicationId "com.taraba.gulfoilapp"
         minSdkVersion 16
         targetSdkVersion 33
-        versionCode 39   //27, 28, 29, 30, 31, 33, 34, 38
-        versionName '5.5'  //4.3, 4.4 , 4.5, 4.6, 4.7, 4.8. 4.9, 5.4
+        versionCode 43  //27, 28, 29, 30, 31, 33, 34, 38,39, 40
+        versionName '5.9'  //4.3, 4.4 , 4.5, 4.6, 4.7, 4.8. 4.9, 5.4, 5.5, 5.6
         multiDexEnabled true
         lintOptions {
             disable "ResourceType"
@@ -45,7 +45,7 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            /*buildConfigField 'String', 'RetialPointCalculatorURL', RetailPointCalculatorUAT
+           /* buildConfigField 'String', 'RetialPointCalculatorURL', RetailPointCalculatorUAT
             buildConfigField 'String', 'RoyalPointCalculatorURL', RoyalPointCalculatorUAT
             buildConfigField 'String', 'BASE_URL', BASE_URL_UAT
             buildConfigField 'String', 'AUTH_USERNAME', AUTH_USERNAME_UAT

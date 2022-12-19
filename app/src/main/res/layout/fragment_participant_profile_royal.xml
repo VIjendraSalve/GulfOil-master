@@ -82,6 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvBasicDetailsLable"
                     android:layout_marginTop="@dimen/margin_16dp"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -186,6 +187,13 @@
 
                     </LinearLayout>
 
+                    <TextView
+                        android:id="@+id/tvFullNameLable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_16dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/edt_full_name_hint" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/tilFullName"
@@ -263,12 +271,7 @@
                         android:layout_marginTop="@dimen/margin_8dp"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tvFullNameLable"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="@dimen/padding_16dp"
-                            android:text="@string/edt_full_name_hint" />
+
 
                     </RelativeLayout>
 
@@ -364,275 +367,13 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_pancard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16dp"
-            android:layout_marginBottom="@dimen/margin_48dp"
-            android:visibility="visible"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintTop_toBottomOf="@id/cvProfileInfo"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/padding_16dp">
-
-                <RelativeLayout
-                    android:id="@+id/rl_pan_Card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/tvPanDetailsLable"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:text="Pan Card Details"
-                        android:textColor="@color/text_black"
-                        android:textSize="@dimen/text_size_14sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/ivPanDetailsDropDown"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_alignParentRight="true"
-                        android:padding="@dimen/padding_8dp"
-                        app:srcCompat="@drawable/ic_drop_down_grey" />
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_pan_data"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right">
-
-                        <TextView
-                            android:id="@+id/tvPanRevalidate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:text="Pan Revalidate "
-                            android:textColor="@color/text_black"
-                            android:textSize="@dimen/text_size_14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tvPanRevalidateReason"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_toRightOf="@id/tvPanRevalidate"
-                            android:text="Reason"
-                            android:layout_marginLeft="5dp"
-                            android:textColor="@color/blue"
-                            android:textSize="@dimen/text_size_14sp"
-                            android:textStyle="bold" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_pan_details"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="visible"
-                        android:orientation="vertical">
-
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvPanCardNameLable"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="@dimen/padding_16dp"
-                                android:text="@string/edt_pan_card_name" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@id/tvPanCardNameLable"
-                                android:text="*"
-                                android:textColor="@color/Red" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/tilPanCardName"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/tvPanCardNameLable"
-                                app:boxCornerRadiusBottomEnd="25dp"
-                                app:boxCornerRadiusBottomStart="25dp"
-                                app:boxCornerRadiusTopEnd="25dp"
-                                app:boxCornerRadiusTopStart="25dp"
-                                app:boxStrokeErrorColor="@color/error"
-                                app:errorTextColor="@color/error">
-                                <!--this is the actual edit text which takes the input-->
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/edtPanCardName"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/height_48dp"
-                                    android:inputType="textCapCharacters"
-                                    android:maxLines="1"
-                                    android:padding="@dimen/tiet_padding_6dp"
-                                    android:textSize="@dimen/tiet_text_size_16sp" />
-
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvPanCardNoLable"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="@dimen/padding_16dp"
-                                android:text="@string/edt_pan_card_no_hint" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@id/tvPanCardNoLable"
-                                android:text="*"
-                                android:textColor="@color/Red" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/tilPanCardNo"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/tvPanCardNoLable"
-                                app:boxCornerRadiusBottomEnd="25dp"
-                                app:boxCornerRadiusBottomStart="25dp"
-                                app:boxCornerRadiusTopEnd="25dp"
-                                app:boxCornerRadiusTopStart="25dp"
-                                app:boxStrokeErrorColor="@color/error"
-                                app:errorTextColor="@color/error">
-                                <!--this is the actual edit text which takes the input-->
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/edtPanCardNoCode"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/height_48dp"
-                                    android:inputType="textCapCharacters"
-                                    android:maxLines="1"
-                                    android:padding="@dimen/tiet_padding_6dp"
-                                    android:textSize="@dimen/tiet_text_size_16sp" />
-
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_8dp"
-                            android:orientation="horizontal">
-
-                            <RelativeLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="2dp"
-                                android:layout_weight="0.60"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/tvPanImageLable"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:paddingLeft="@dimen/padding_16dp"
-                                    android:text="@string/edt_pan_card_img_hint" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_toRightOf="@id/tvPanImageLable"
-                                    android:text="*"
-                                    android:textColor="@color/Red" />
-
-                                <com.google.android.material.textfield.TextInputLayout
-                                    android:id="@+id/tilPanImage"
-                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@id/tvPanImageLable"
-                                    app:boxCornerRadiusBottomEnd="25dp"
-                                    app:boxCornerRadiusBottomStart="25dp"
-                                    app:boxCornerRadiusTopEnd="25dp"
-                                    app:boxCornerRadiusTopStart="25dp"
-                                    app:boxStrokeErrorColor="@color/error"
-                                    app:errorTextColor="@color/error">
-                                    <!--this is the actual edit text which takes the input-->
-                                    <com.google.android.material.textfield.TextInputEditText
-                                        android:id="@+id/edtPanImage"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="@dimen/height_48dp"
-                                        android:maxLines="1"
-                                        android:padding="@dimen/tiet_padding_6dp"
-                                        android:singleLine="true"
-                                        android:textSize="@dimen/tiet_text_size_16sp" />
-
-                                </com.google.android.material.textfield.TextInputLayout>
-                            </RelativeLayout>
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/btnChoosePanCard"
-                                style="@style/royal_dialog_black_button"
-                                android:layout_width="0dp"
-                                android:layout_gravity="bottom"
-                                android:layout_weight="0.40"
-                                android:text="Choose File" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/tvViewPanCardCopy"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_16dp"
-                            android:paddingLeft="@dimen/padding_16dp"
-                            android:text="View Pan Card Copy"
-                            android:textColor="@color/hyperlink" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-
-
-
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvBankDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
             android:layout_marginBottom="@dimen/margin_24dp"
             app:cardCornerRadius="10dp"
-            app:layout_constraintTop_toBottomOf="@id/cv_pancard">
+            app:layout_constraintTop_toBottomOf="@id/cvProfileInfo">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -669,7 +410,7 @@
                     android:layout_below="@id/tvBankDetailsLable"
                     android:layout_marginTop="5dp"
                     android:orientation="vertical"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1126,13 +867,300 @@
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_pancard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginBottom="@dimen/margin_48dp"
+            android:visibility="visible"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cvBankDetails"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_16dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_pan_Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvPanDetailsLable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Pan Card Details"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ivPanDetailsDropDown"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/padding_8dp"
+                        app:srcCompat="@drawable/ic_drop_down_grey" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_pan_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/tvPanRevalidate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Pan Revalidate "
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPanRevalidateReason"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toRightOf="@id/tvPanRevalidate"
+                            android:text="Reason"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/text_size_14sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_pan_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8dp"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="2dp"
+                                android:layout_weight="0.60"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvPanImageLable"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="@dimen/padding_16dp"
+                                    android:text="@string/edt_pan_card_img_hint" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/tvPanImageLable"
+                                    android:text="*"
+                                    android:textColor="@color/Red" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilPanImage"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvPanImageLable"
+                                    app:boxCornerRadiusBottomEnd="25dp"
+                                    app:boxCornerRadiusBottomStart="25dp"
+                                    app:boxCornerRadiusTopEnd="25dp"
+                                    app:boxBackgroundColor="@color/menu_disable_grey"
+                                    app:boxCornerRadiusTopStart="25dp"
+                                    app:boxStrokeErrorColor="@color/error"
+                                    app:errorTextColor="@color/error">
+                                    <!--this is the actual edit text which takes the input-->
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edtPanImage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/height_48dp"
+                                        android:maxLines="1"
+                                        android:padding="@dimen/tiet_padding_6dp"
+                                        android:textColor="@color/black"
+                                        android:enabled="false"
+                                        android:singleLine="true"
+                                        android:textSize="@dimen/tiet_text_size_16sp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                            </RelativeLayout>
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnChoosePanCard"
+                                style="@style/royal_dialog_black_button"
+                                android:layout_width="0dp"
+                                android:layout_gravity="bottom"
+                                android:layout_weight="0.40"
+                                android:text="Choose File" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvLable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:layout_below="@+id/tilPanImage"
+                            android:layout_marginTop="3dp"
+                            android:text="@string/maximagesize" />
+
+                        <TextView
+                            android:id="@+id/tvViewPanCardCopy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8dp"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:text="View Pan Card Copy"
+                            android:layout_below="@+id/tvLable"
+                            android:textColor="@color/hyperlink" />
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="@dimen/margin_10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPanCardNameLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_pan_card_name" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvPanCardNameLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilPanCardName"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvPanCardNameLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxBackgroundColor="@color/menu_disable_grey"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtPanCardName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:textColor="@color/black"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPanCardNoLable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/padding_16dp"
+                                android:text="@string/edt_pan_card_no_hint" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tvPanCardNoLable"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilPanCardNo"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvPanCardNoLable"
+                                app:boxCornerRadiusBottomEnd="25dp"
+                                app:boxCornerRadiusBottomStart="25dp"
+                                app:boxCornerRadiusTopEnd="25dp"
+                                app:boxCornerRadiusTopStart="25dp"
+                                app:boxBackgroundColor="@color/menu_disable_grey"
+                                app:boxStrokeErrorColor="@color/error"
+                                app:errorTextColor="@color/error">
+                                <!--this is the actual edit text which takes the input-->
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtPanCardNoCode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_48dp"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:textColor="@color/black"
+                                    android:padding="@dimen/tiet_padding_6dp"
+                                    android:textSize="@dimen/tiet_text_size_16sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/cvBankDetails">
+            app:layout_constraintTop_toBottomOf="@id/cv_pancard">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCancel"
