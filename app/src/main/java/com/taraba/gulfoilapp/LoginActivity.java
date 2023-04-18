@@ -1,5 +1,6 @@
 package com.taraba.gulfoilapp;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -27,6 +28,11 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.taraba.gulfoilapp.contentproviders.UserTableDatasource;
 import com.taraba.gulfoilapp.databinding.ActivityLoginBinding;
 import com.taraba.gulfoilapp.dialog.GulfUnnatiDialog;
@@ -41,6 +47,7 @@ import org.json.JSONObject;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
@@ -66,27 +73,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         setContentView(binding.getRoot());
         permissions = new Android_Permission(this);
         getFCMToken();
-        if (Build.VERSION.SDK_INT >= 23) {
-            Log.e("version", ">23");
-            if (!permissions.checkPermissionForPhoneState()) {
-                Log.e("version", "phone state");
-                permissions.requestPermissionForPhoneState();
-            }
-            if (!permissions.checkPermissionForExternalStorage()) {
-                Log.e("version", "external storage");
-                permissions.requestPermissionForExternalStorage();
-            }
-            if (!permissions.checkPermissionForReadExternalStorage()) {
-                Log.e("version", "read external storage");
-                permissions.requestPermissionForReadExternalStorage();
-            }
-            if (!permissions.checkPermissionForCamera()) {
-                Log.e("version", "camera");
-                permissions.requestPermissionForCamera();
-            }
-        } else {
-            //Toast.makeText(this,"Permissions granted",Toast.LENGTH_SHORT).show();
-        }
+
 
         initSignUpActivityComponants();
         SharedPreferences preferences1 = getSharedPreferences("dialoStatus", Context.MODE_PRIVATE);
@@ -107,7 +94,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         Log.e("strPhoneNo no :", "strPassword no :" + strPassword);
 
         try {
-            if (mStringAction.equals("") || mStringAction == null) {
+            if ( mStringAction == null) { //mStringAction.equals("") ||hide
             } else {
                 if (mStringAction.equals("forgot")) {
                     Log.e("in forgot regis", "in forgot reg");
@@ -248,7 +235,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
      * <p>
      * Created Date : Jul 16, 2015
      */
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+
     public void initSignUpActivityComponants() {
         //Call to toll free number
 
@@ -289,7 +276,69 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         switch (requestCode) {
             case UserFunctions.PERMISSION_READ_PHONE_STATE: {
 
-                Map<String, Integer> perms = new HashMap<>();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    Dexter.withContext(LoginActivity.this)
+                            .withPermissions(
+                                    android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                                    Manifest.permission.CAMERA,
+                                    Manifest.permission.READ_CONTACTS,
+                                    Manifest.permission.GET_ACCOUNTS,
+                                    Manifest.permission.CALL_PHONE,
+                                    Manifest.permission.READ_MEDIA_IMAGES,
+                                    Manifest.permission.READ_MEDIA_AUDIO,
+                                    Manifest.permission.READ_MEDIA_VIDEO,
+                                    Manifest.permission.READ_PHONE_STATE
+                            )
+                            .withListener(new MultiplePermissionsListener() {
+                                @Override
+                                public void onPermissionsChecked(MultiplePermissionsReport report) {
+                                    if (report.areAllPermissionsGranted()) {
+                                        RegisterUser();
+                                    }
+
+                                    if (report.isAnyPermissionPermanentlyDenied()) {
+                                        showSettingsDialog();
+                                    }
+                                }
+
+                                @Override
+                                public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                                    token.continuePermissionRequest();
+                                }
+                            }).check();
+                }
+                else {
+                    Dexter.withContext(LoginActivity.this)
+                            .withPermissions(
+                                    android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                                    Manifest.permission.CAMERA,
+                                    Manifest.permission.READ_CONTACTS,
+                                    Manifest.permission.GET_ACCOUNTS,
+                                    Manifest.permission.CALL_PHONE,
+                                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                    Manifest.permission.READ_PHONE_STATE
+                            )
+                            .withListener(new MultiplePermissionsListener() {
+                                @Override
+                                public void onPermissionsChecked(MultiplePermissionsReport report) {
+                                    if (report.areAllPermissionsGranted()) {
+                                        RegisterUser();
+                                    }
+
+                                    if (report.isAnyPermissionPermanentlyDenied()) {
+                                        showSettingsDialog();
+                                    }
+                                }
+
+                                @Override
+                                public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                                    token.continuePermissionRequest();
+                                }
+                            }).check();
+                }
+
+                /*Map<String, Integer> perms = new HashMap<>();
                 // Initialize the map with both permissions
                 perms.put(android.Manifest.permission.READ_PHONE_STATE, PackageManager.PERMISSION_GRANTED);
                 perms.put(android.Manifest.permission.READ_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
@@ -299,7 +348,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                     for (int i = 0; i < permissions.length; i++)
                         perms.put(permissions[i], grantResults[i]);
                     // Check for both permissions
-                    if (perms.get(android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED && perms.get(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                    if (perms.get(android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
+                            && perms.get(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                             && perms.get(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                         Log.e("sms & location services", " permission granted");
                         if (NetworkUtils.isNetworkAvailable(LoginActivity.this)) {
@@ -315,7 +365,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                         // process the normal flow
                         //else any one or both the permissions are not granted
                     } else {
-                        Log.e("", "Some permissions are not granted ask again ");
+                        Log.e(TAG, "Some permissions are not granted ask again ");
                         //permission is denied (this is the first time, when "never ask again" is not checked) so ask again explaining the usage of permission
 //                        // shouldShowRequestPermissionRationale will return true
                         //show the dialog or snackbar saying its necessary and try again otherwise proceed with setup.
@@ -366,9 +416,30 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                     }
                 } else {
                     Log.e("", "Permission NOT granted");
-                }
+                }*/
             }
         }
+    }
+
+    private void showSettingsDialog() {
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(LoginActivity.this);
+        builder.setTitle(getString(R.string.dialog_permission_title));
+        builder.setMessage(getString(R.string.dialog_permission_message));
+        builder.setPositiveButton(getString(R.string.go_to_settings), (dialog, which) -> {
+            dialog.cancel();
+            openSettings();
+        });
+        builder.setNegativeButton(getString(android.R.string.cancel), (dialog, which) -> dialog.cancel());
+        builder.show();
+
+    }
+
+    // navigating user to app settings
+    private void openSettings() {
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", getPackageName(), null);
+        intent.setData(uri);
+        startActivityForResult(intent, 101);
     }
 
     private void showDialogOK(String message, DialogInterface.OnClickListener okListener) {
@@ -439,24 +510,40 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         }
     }
 
-    public void switchActivity(String strType, String retailer_type) {
-        Log.e(TAG, "switchActivity: Type: " + strType + " Retailer Type: " + retailer_type);
-        Intent mIntentGoToHome;
-        if (strType.equals("retailer")) {
-            mIntentGoToHome = new Intent(LoginActivity.this,
-                    MainDashboardActivity.class);
-        } else {
-            mIntentGoToHome = new Intent(LoginActivity.this,
-                    FlsDashboardActivity.class);
-        }
+    public void switchActivity(String strType, String retailer_type, String kyc_status) {
+        Log.e(TAG, "switchActivity: Type: " + strType + " Retailer Type: " + retailer_type + "kyc_status "+ kyc_status);
 
-        Log.e("Type ", "Type : " + strType);
 
-        mIntentGoToHome.putExtra("action", strType);
-        mIntentGoToHome.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        mIntentGoToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(mIntentGoToHome);
-        finish();
+            Intent mIntentGoToHome = null;
+            if (strType.equals("fls")) {
+                mIntentGoToHome = new Intent(LoginActivity.this,
+                        FlsDashboardActivity.class);
+                Log.e("Type ", "Type : " + strType);
+
+                mIntentGoToHome.putExtra("action", strType);
+                mIntentGoToHome.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                mIntentGoToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(mIntentGoToHome);
+                finish();
+            } else if(kyc_status.equals("true")) {
+                mIntentGoToHome = new Intent(LoginActivity.this,
+                        MainDashboardActivity.class);
+
+                mIntentGoToHome.putExtra("action", strType);
+                mIntentGoToHome.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                mIntentGoToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(mIntentGoToHome);
+                finish();
+            }else {
+                Intent mIntentGoToHome1 = null;
+                mIntentGoToHome1 = new Intent(LoginActivity.this,
+                        CheckKYCActivity.class);
+                startActivity(mIntentGoToHome1);
+                finish();
+            }
+
+
+
     }
 
     public void alertDialog(String title, String message) {
@@ -481,7 +568,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                 openForgotPasswordScreen();
                 break;
             case R.id.btnLogin:
-                //startActivity(new Intent(this, RoyalDashboardActivity.class));
+                //startActivity(new Intent(this, CheckKYCActivity.class));
                 processLogin();
                 break;
             case R.id.tvTermAndConditionLink:
@@ -618,7 +705,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                 jObj = new UserFunctions().Login_webservice_call(""
                         + params[0][0], "" + params[0][1], "" + params[0][2], regId, "" + params[0][3]);
 
-                Log.e("", "Login Response:---" + jObj);
+                Log.e("", "LoginResponse1:---" + jObj);
             } catch (Exception e) {
                 // TODO: handle exception
                 LoginActivity.this.runOnUiThread(new Runnable() {
@@ -699,7 +786,10 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                                 } else {
                                     edit1.putString("retailer_type", "");
                                 }
-
+                                edit1.putString("kyc_status", jObj.getString("kyc_status"));
+                                edit1.putString("tds_content", jObj.getString("tds_content"));
+                                edit1.putString("alert_content", jObj.getString("alert_content"));
+                                Log.d("Vijendra1", "onPostExecute: "+jObj.getString("kyc_status"));
                                 edit1.commit();
 
                                 SharedPreferences preferences = getSharedPreferences(
@@ -721,8 +811,9 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                                         "signupdetails", Context.MODE_PRIVATE);
                                 String type = preference10.getString("user_type", "");
                                 String retailer_type = preference10.getString("retailer_type", "");
+                                String kyc_status = preference10.getString("kyc_status", "");
                                 //switchActivity(jObj.getString("type"));
-                                switchActivity(type, retailer_type);
+                                switchActivity(type, retailer_type, kyc_status);
                             } else {
                                 Log.d("Result_Response2", jObj.getString("type").toString());
                                 SharedPreferences preferences1 = getSharedPreferences(
@@ -750,6 +841,12 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                                     edit1.putString("retailer_type", "");
                                 }
 
+                                if(!jObj.getString("type").equals("fls")) {
+                                    edit1.putString("kyc_status", jObj.getString("kyc_status"));
+                                    edit1.putString("tds_content", jObj.getString("tds_content"));
+                                    edit1.putString("alert_content", jObj.getString("alert_content"));
+                                    Log.d("Vijendra1", "onPostExecute2: " + jObj.getString("kyc_status"));
+                                }
 
                                 edit1.commit();
 
@@ -775,8 +872,15 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                                 String type = preference10.getString("user_type", "");
                                 String retailer_type = preference10.getString("retailer_type", "");
 
+                                if(!jObj.getString("type").equals("fls")) {
+                                    String kyc_status = preference10.getString("kyc_status", "");
+                                    switchActivity(type, retailer_type, kyc_status);
+                                }else {
+                                    switchActivity(type, retailer_type, "false");
+                                }
+
                                 //switchActivity(jObj.getString("type"));
-                                switchActivity(type, retailer_type);
+
                                 // switchActivity(jObj.getString("type"));
                             }
                         }

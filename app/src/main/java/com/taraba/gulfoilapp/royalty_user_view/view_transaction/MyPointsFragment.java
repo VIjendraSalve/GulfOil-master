@@ -24,6 +24,7 @@ import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.taraba.gulfoilapp.HelperNew.SharedPref;
 import com.taraba.gulfoilapp.MainDashboardActivity;
 import com.taraba.gulfoilapp.R;
 import com.taraba.gulfoilapp.adapter.ClaimHistoryModel;
@@ -90,6 +91,8 @@ public class MyPointsFragment extends Fragment implements AdapterView.OnItemSele
     private Disposable disposable;
     private SharedPreferences userPref;
     private List<String> yearsList;
+    private String login_id_pk="";
+    private Boolean isFromFLS;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -108,6 +111,20 @@ public class MyPointsFragment extends Fragment implements AdapterView.OnItemSele
 //                GulfOilUtils.callTollFree(getActivity());
 //            }
 //        });
+
+
+
+        Bundle extras = getActivity().getIntent().getExtras();
+        /*extras.getString("ITEM_NAME");*/
+
+        isFromFLS = extras.getBoolean("isFromFLS", true);
+        if(isFromFLS){
+            login_id_pk = extras.getString("retailerLoginId");
+            Log.d("isFromFLS", "isFromFLS: "+isFromFLS);
+            Log.d("isFromFLS", "login_id_pk: "+ SharedPref.getPrefs(getActivity(), "flsID"));
+
+        }
+
         SharedPreferences preferences = (getActivity()).getSharedPreferences(
                 "userinfo", Context.MODE_PRIVATE);
 
@@ -570,7 +587,7 @@ total_points
                     Log.e("Page : ", "Page No Set : " + page_no_set + " ,  k : " + k);
                    /* if(k==2)
                     {
-                        if(((page_no_set-3)>=0)) {
+                        if(((page_no    _set-3)>=0)) {
                             setFirstBottomLayout((page_no_set + 2), 0);
                         } else if((page_no_set+4)<=(size)){
                             setFirstBottomLayout((page_no_set), 2);
@@ -880,8 +897,30 @@ total_points
             progressDialog.setCancelable(false);
             progressDialog.show();
             THRequest request = new THRequest();
-            request.setLogin_id(userPref.getString("usertrno", ""));
-            request.setPeriod(year);
+            UserType userType = new GulfOilUtils().getUserType();
+            if (userType == UserType.ROYAL) {
+               // request.setFls_login_id(userPref.getString("usertrno", ""));
+                request.setPeriod(year);
+                request.setLogin_id(userPref.getString("usertrno", ""));
+            } else if (userType == UserType.ELITE) {
+                request.setPeriod(year);
+                request.setLogin_id(userPref.getString("usertrno", ""));
+            } else if (userType == UserType.CLUB) {
+                request.setPeriod(year);
+                request.setLogin_id(userPref.getString("usertrno", ""));
+            } else {
+                request.setFls_login_id(userPref.getString("usertrno", ""));
+                request.setPeriod(year);
+                request.setLogin_id(SharedPref.getPrefs(getActivity(), "flsID"));
+            }
+
+
+
+
+            Log.d(TAG, "callTransactionHistory: "+SharedPref.getPrefs(getActivity(), "flsID"));
+            Log.d(TAG, "callTransactionHistory: "+request.getLogin_id());
+            Log.d(TAG, "callTransactionHistory: "+userPref.getString("usertrno", ""));
+            Log.d(TAG, "callTransactionHistory: "+request.getPeriod());
             disposable = ServiceBuilder.getRetrofit()
                     .create(GulfService.class)
                     .getTH(request)

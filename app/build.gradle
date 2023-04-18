@@ -21,8 +21,8 @@ android {
         applicationId "com.taraba.gulfoilapp"
         minSdkVersion 16
         targetSdkVersion 33
-        versionCode 43  //27, 28, 29, 30, 31, 33, 34, 38,39, 40
-        versionName '5.9'  //4.3, 4.4 , 4.5, 4.6, 4.7, 4.8. 4.9, 5.4, 5.5, 5.6
+        versionCode 46  //27, 28, 29, 30, 31, 33, 34, 38,39, 40, 44, 45
+        versionName '6.2'  //4.3, 4.4 , 4.5, 4.6, 4.7, 4.8. 4.9, 5.4, 5.5, 5.6, 6.0, 6.1
         multiDexEnabled true
         lintOptions {
             disable "ResourceType"
@@ -126,7 +126,8 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.isseiaoki:simplecropview:1.1.0'
     //noinspection DuplicatePlatformClasses
-    implementation 'org.apache.httpcomponents:httpclient:4.5.6'
+   // implementation 'org.apache.httpcomponents:httpclient:4.5.6'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'commons-net:commons-net:3.3'
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
@@ -151,7 +152,8 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.1.4'
     // Retrofit & OkHttp
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+    //implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
     // Retrofit JSON converter (Gson)
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     //And add the adapter for retrofit2 to work with RxJava 2.
@@ -166,6 +168,8 @@ dependencies {
 
     //Optional: see how to use the utility.
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
+
+    implementation 'com.karumi:dexter:6.2.3'
 
 
 }

@@ -13,6 +13,7 @@ import com.taraba.gulfoilapp.model.GetRetailerProfileDetailsRequest;
 import com.taraba.gulfoilapp.model.GetRetailerProfileDetailsResponse;
 import com.taraba.gulfoilapp.model.HelpRequest;
 import com.taraba.gulfoilapp.model.HelpResponse;
+import com.taraba.gulfoilapp.model.KYCOTPRequest;
 import com.taraba.gulfoilapp.model.KnowledgeCornerRequest;
 import com.taraba.gulfoilapp.model.KnowledgeCornerResponse;
 import com.taraba.gulfoilapp.model.LeaderBoardRequest;
@@ -32,6 +33,7 @@ import com.taraba.gulfoilapp.model.ResendOTPRetailerRequest;
 import com.taraba.gulfoilapp.model.ResendOTPRetailerResponse;
 import com.taraba.gulfoilapp.model.SearchRetailerRequest;
 import com.taraba.gulfoilapp.model.SearchRetailerResponse;
+import com.taraba.gulfoilapp.model.SubmitKYCOTPRequest;
 import com.taraba.gulfoilapp.model.SubmitYDROTPRequest;
 import com.taraba.gulfoilapp.model.SubmitYDROTPResponse;
 import com.taraba.gulfoilapp.model.THPeriodResponse;
@@ -87,8 +89,16 @@ public interface GulfService {
     @POST("ev_otp")
     Observable<YDROTPResponse> sendDigitalRewardOTP(@Body YDROTPRequest request);
 
+    //vijendra 10 Apr 2023
+    @POST("non_kyc_approved")
+    Observable<YDROTPResponse> sendKYCOTP(@Body KYCOTPRequest request);
+
     @POST("ev_details")
     Observable<SubmitYDROTPResponse> submitDigitalRewardOTP(@Body SubmitYDROTPRequest request);
+
+    //vijendra 10 Apr 2023
+    @POST("non_kyc_otp_submit")
+    Observable<YDROTPResponse> submitKYCOTP(@Body SubmitKYCOTPRequest request);
 
     @POST("milestone_set_target")
     Observable<MilestoneTargetListResponse> getMilestoneTargetList(@Body MilestoneTargetListRequest request);

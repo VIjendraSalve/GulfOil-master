@@ -723,8 +723,11 @@ public class OrderConfirmDetailsFragment extends Fragment implements View.OnClic
         protected JSONObject doInBackground(Void... params) {
             Log.e("insert :", "in do in background of get order details");
             JSONObject jObj = null;
+            SharedPreferences preferences4 = getActivity().getSharedPreferences(
+                    "signupdetails", Context.MODE_PRIVATE);
+            String login_id4 = preferences4.getString("usertrno", "");
             try {
-                jObj = new UserFunctions().getProductData(product_code);
+                jObj = new UserFunctions().getProductData(product_code, login_id4);
                 // Log.e("", "Category json" + jObj);
             } catch (Exception e) {
                 // TODO: handle exception

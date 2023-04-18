@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="str_my_tds_certificate">My TDS Certificate</string>
+    <string name="kyc_pending">YOUR KYC IS PENDING</string>
+    <string name="kyc_pending_message">"As per 194 R of TDS law, TDS of is applicable on all your redemptions of rewards.\n\n Complete your KYC now and allow 10% TDS or 20% TDS will be deducted on your Unnati redemptions. "</string>
+    <string name="yes_kyc">"Yes, wish to complete "</string>
+    <string name="no_kyc">No, don\'t wih to complete KYC</string>
+    <string name="kyc_alert">As you do not wish to complete KYC, Unnati consider this as your consent to deduct 20% TDS on your points redemption.</string>
+    <string name="alert">Alert!</string>
+    <string name="yes_i_agree">Yes, I agree</string>
+    <string name="str_kyc_status_otp">Your KYC Status</string>
 </resources>

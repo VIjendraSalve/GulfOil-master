@@ -25,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.taraba.gulfoilapp.AppConfig;
+import com.taraba.gulfoilapp.HelperNew.SharedPref;
 import com.taraba.gulfoilapp.LoginActivity;
 import com.taraba.gulfoilapp.MainDashboardActivity;
 import com.taraba.gulfoilapp.R;
@@ -96,6 +97,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Recy
     @Override
     public void onResume() {
         super.onResume();
+        SharedPref.clearPref1(getActivity(), "flsID");
         if (getActivity() instanceof MainDashboardActivity) {
             ((MainDashboardActivity) getActivity()).callSplashPopUp();
         }
@@ -183,6 +185,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Recy
 
     private void setDashboardDataToUI(DashboardDataResponse.Data data) {
         if (data.isIs_login()) {
+            Log.d(TAG, "getTrending_rewards: "+data.getParticipant_dashboard().getTrending_rewards().size());
             //saved profile img path in preference if updated by user after login
             userPref.edit().putString("profile_image", data.getProfile_image()).apply();
             userPref.edit().putString("full_name", data.getFull_name()).apply();

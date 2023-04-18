@@ -61,7 +61,8 @@ public class UpdateRetailerProfileOTPFragment extends Fragment {
                 UpdateRetailerProfileOTPFragment updateRetailerProfileOTPFragment = UpdateRetailerProfileOTPFragment.this;
                 updateRetailerProfileOTPFragment.otp = updateRetailerProfileOTPFragment.pinViewOTP.getText().toString();
                 if (UpdateRetailerProfileOTPFragment.this.otp.equals("") || UpdateRetailerProfileOTPFragment.this.otp == null) {
-                    new GulfUnnatiDialog(UpdateRetailerProfileOTPFragment.this.getActivity(), new GulfOilUtils().getUserType()).setTitle(UpdateRetailerProfileOTPFragment.this.getString(R.string.str_error)).setDescription("Please Enter OTP").setPosButtonText(UpdateRetailerProfileOTPFragment.this.getString(R.string.str_ok), (GulfUnnatiDialog.OnPositiveClickListener) null).show();
+                    new GulfUnnatiDialog(UpdateRetailerProfileOTPFragment.this.getActivity(),
+                            new GulfOilUtils().getUserType()).setTitle(UpdateRetailerProfileOTPFragment.this.getString(R.string.str_error)).setDescription("Please Enter OTP").setPosButtonText(UpdateRetailerProfileOTPFragment.this.getString(R.string.str_ok), (GulfUnnatiDialog.OnPositiveClickListener) null).show();
                 } else {
                     UpdateRetailerProfileOTPFragment.this.verifyUpdateRetailerProfileOTPAPI();
                 }

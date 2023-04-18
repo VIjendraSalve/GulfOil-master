@@ -185,7 +185,7 @@ public class UserFunctions {
 
         //System.out.println("Got result : " + json.toString());
 
-        Log.e("", "Login response" + json);
+        Log.e("", "Loginresponse" + json);
         // return json
         return json;
     }
@@ -675,13 +675,14 @@ public class UserFunctions {
         return json;
     }
 
-    public JSONObject getProductList(String updateDate) {
+    public JSONObject getProductList(String updateDate, String loginId) {
         JSONObject params = new JSONObject();
         Log.e("", "Update date in get product list user functions : " + updateDate);
         try {
 
             if (!(updateDate == null))
                 params.put("update_date", updateDate);
+                params.put("login_id", loginId);
         } catch (JSONException e) {
             Log.e("", "JSON errror : " + e.toString());
         }
@@ -691,13 +692,16 @@ public class UserFunctions {
         return json;
     }
 
-    public JSONObject getAllCategories(String updateDate) {
+    public JSONObject getAllCategories(String updateDate, String login_id4) {
         JSONObject params = new JSONObject();
         Log.e("", "Update date in get all categories user functions : " + updateDate);
         try {
 
-            if (!(updateDate == null))
+            if (!(updateDate == null)) {
+
                 params.put("update_date", updateDate);
+                params.put("login_id", login_id4);
+            }
         } catch (JSONException e) {
             Log.e("", "JSON errror : " + e.toString());
         }
@@ -712,13 +716,14 @@ public class UserFunctions {
 
     }
 
-    public JSONObject getProductData(String product_code) {
+    public JSONObject getProductData(String product_code, String loginId) {
         JSONObject params = new JSONObject();
         //Log.e("", "Update date in get product list user functions : " + updateDate);
         try {
 
             if (!(product_code == null))
                 params.put("product_code", product_code);
+                params.put("login_id", loginId);
         } catch (JSONException e) {
             Log.e("", "JSON errror : " + e.toString());
         }

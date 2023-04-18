@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -22,6 +23,7 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.taraba.gulfoilapp.FlsDashboardActivity;
+import com.taraba.gulfoilapp.HelperNew.SharedPref;
 import com.taraba.gulfoilapp.MechCampaignRewardsFragment;
 import com.taraba.gulfoilapp.R;
 import com.taraba.gulfoilapp.YourDigitalRewardsActivity;
@@ -179,6 +181,8 @@ public class NewSearchRetailerFragment extends Fragment implements View.OnClickL
                 return;
             case R.id.btnPoints:
                 Bundle bundle2 = new Bundle();
+                //Toast.makeText(getActivity(), ""+this.response.getParticpant_data().get(0).getLogin_id_pk(), Toast.LENGTH_SHORT).show();
+                SharedPref.setPrefs(getActivity(),"flsID",this.response.getParticpant_data().get(0).getLogin_id_pk());
                 bundle2.putBoolean("isFromFLS", true);
                 bundle2.putString("retailerLoginId", this.response.getParticpant_data().get(0).getLogin_id_pk());
                 Navigation.findNavController(getView()).navigate((int) R.id.myPointsFragmentFls, bundle2);

@@ -79,6 +79,13 @@ public class MainDashboardActivity extends AppCompatActivity implements View.OnC
 //                .build();
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+        if(getIntent().getStringExtra("FromNonKYCStatus")!=null) {
+            if (getIntent().getStringExtra("FromNonKYCStatus").equals("1")) {
+                navController.navigate(R.id.participantProfileFragment);
+            }
+        }
+
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 

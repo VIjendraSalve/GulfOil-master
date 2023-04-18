@@ -357,13 +357,15 @@ public class RedeemMainFragment extends Fragment {
             Log.e("insert :", "in do in background of Get All Category");
             JSONObject jObj = null;
             try {
-
+                SharedPreferences preferences4 = getActivity().getSharedPreferences(
+                        "signupdetails", Context.MODE_PRIVATE);
+                String login_id4 = preferences4.getString("usertrno", "");
 
                 Log.e("", "Update category date" + cat_updateDate);
                 if (cat_updateDate.equals("") || cat_updateDate == null)
-                    jObj = new UserFunctions().getAllCategories(null);
+                    jObj = new UserFunctions().getAllCategories(null, login_id4);
                 else {
-                    jObj = new UserFunctions().getAllCategories("" + cat_updateDate);
+                    jObj = new UserFunctions().getAllCategories("" + cat_updateDate, login_id4);
 
 
                 }
@@ -468,13 +470,17 @@ public class RedeemMainFragment extends Fragment {
             JSONObject jObj = null;
             try {
 
+                SharedPreferences preferences4 = getActivity().getSharedPreferences(
+                        "signupdetails", Context.MODE_PRIVATE);
+                String login_id = preferences4.getString("usertrno", "");
+
                 Log.e("", "Update GetProductList date" + prod_updateDate);
                 if (prod_updateDate.equals("") || prod_updateDate == null)
-                    jObj = new UserFunctions().getProductList(null);
+                    jObj = new UserFunctions().getProductList(null, login_id);
                 else {
                     //MODIFIED BY PRAVIN DHARAM SEND UPDATED DATE BLANK EVERY TIME
                     //MODIFIED DATE 29M19
-                    jObj = new UserFunctions().getProductList(null);
+                    jObj = new UserFunctions().getProductList(null, login_id);
                 }
             } catch (Exception e) {
                 // TODO: handle exception
